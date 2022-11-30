@@ -30,7 +30,7 @@
             <div class="air-name">{airline["Airline Name"]}</div>
             <div class="ml-auto d-flex align-items-center">
               <div class="air-updated" style="margin-right: 0px;">
-                <span>Latest Updates:</span>
+                <span>Latest Updated:</span>
                 {date}
               </div>
             </div>

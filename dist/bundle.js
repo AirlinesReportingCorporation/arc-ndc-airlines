@@ -21907,7 +21907,7 @@ var app = (function () {
     			div5 = element("div");
     			div4 = element("div");
     			span = element("span");
-    			span.textContent = "Latest Updates:";
+    			span.textContent = "Latest Updated:";
     			t7 = space();
     			t8 = text(/*date*/ ctx[1]);
     			attr_dev(div0, "class", "air-designator svelte-1lpjcs");
@@ -22718,7 +22718,7 @@ var app = (function () {
     }
 
     const app = new App({
-    	target: document.getElementById('app'),
+    	target: document.getElementById('ndc-app'),
     });
 
     return app;
