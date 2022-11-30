@@ -29,16 +29,6 @@
 
 <div class="ndc-airlines" style="display: inline-block;">
   {#each airline as a}
-    <div>
-      <p>
-        {a.Designator}
-        {a["Numeric Code"].toString().length == 2
-          ? "0" + a["Numeric Code"]
-          : a["Numeric Code"]}
-        {a["Airline Name"]}
-		Latest Updates: {date}
-      </p>
-    </div>
+  <Airline airline={a} {date}/>
   {/each}
-  <Airline></Airline>
 </div>

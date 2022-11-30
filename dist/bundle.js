@@ -21066,18 +21066,59 @@ var app = (function () {
     // (11:0) {#if isOpen}
     function create_if_block(ctx) {
     	let div;
+    	let p;
+    	let t0_value = /*airline*/ ctx[0].Designator + "";
+    	let t0;
+    	let t1;
+
+    	let t2_value = (/*airline*/ ctx[0]["Numeric Code"].toString().length == 2
+    	? "0" + /*airline*/ ctx[0]["Numeric Code"]
+    	: /*airline*/ ctx[0]["Numeric Code"]) + "";
+
+    	let t2;
+    	let t3;
+    	let t4_value = /*airline*/ ctx[0]["Airline Name"] + "";
+    	let t4;
+    	let t5;
+    	let t6;
     	let div_transition;
     	let current;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			div.textContent = "I'm code for when you click the + !";
-    			add_location(div, file$1, 11, 0, 248);
+    			p = element("p");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			t2 = text(t2_value);
+    			t3 = space();
+    			t4 = text(t4_value);
+    			t5 = text("\n          Latest Updates: ");
+    			t6 = text(/*date*/ ctx[1]);
+    			add_location(p, file$1, 12, 8, 293);
+    			add_location(div, file$1, 11, 0, 242);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
+    			append_dev(div, p);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    			append_dev(p, t2);
+    			append_dev(p, t3);
+    			append_dev(p, t4);
+    			append_dev(p, t5);
+    			append_dev(p, t6);
     			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if ((!current || dirty & /*airline*/ 1) && t0_value !== (t0_value = /*airline*/ ctx[0].Designator + "")) set_data_dev(t0, t0_value);
+
+    			if ((!current || dirty & /*airline*/ 1) && t2_value !== (t2_value = (/*airline*/ ctx[0]["Numeric Code"].toString().length == 2
+    			? "0" + /*airline*/ ctx[0]["Numeric Code"]
+    			: /*airline*/ ctx[0]["Numeric Code"]) + "")) set_data_dev(t2, t2_value);
+
+    			if ((!current || dirty & /*airline*/ 1) && t4_value !== (t4_value = /*airline*/ ctx[0]["Airline Name"] + "")) set_data_dev(t4, t4_value);
+    			if (!current || dirty & /*date*/ 2) set_data_dev(t6, /*date*/ ctx[1]);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -21119,7 +21160,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*isOpen*/ ctx[0] && create_if_block(ctx);
+    	let if_block = /*isOpen*/ ctx[2] && create_if_block(ctx);
 
     	const block = {
     		c: function create() {
@@ -21128,8 +21169,8 @@ var app = (function () {
     			t1 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr_dev(div, "aria-expanded", /*isOpen*/ ctx[0]);
-    			add_location(div, file$1, 8, 0, 179);
+    			attr_dev(div, "aria-expanded", /*isOpen*/ ctx[2]);
+    			add_location(div, file$1, 8, 0, 173);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21143,18 +21184,20 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div, "click", /*toggle*/ ctx[1], false, false, false);
+    				dispose = listen_dev(div, "click", /*toggle*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*isOpen*/ 1) {
-    				attr_dev(div, "aria-expanded", /*isOpen*/ ctx[0]);
+    			if (!current || dirty & /*isOpen*/ 4) {
+    				attr_dev(div, "aria-expanded", /*isOpen*/ ctx[2]);
     			}
 
-    			if (/*isOpen*/ ctx[0]) {
+    			if (/*isOpen*/ ctx[2]) {
     				if (if_block) {
-    					if (dirty & /*isOpen*/ 1) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*isOpen*/ 4) {
     						transition_in(if_block, 1);
     					}
     				} else {
@@ -21206,31 +21249,51 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Airline', slots, []);
+    	let { airline } = $$props;
+    	let { date } = $$props;
     	let isOpen = false;
-    	const toggle = () => $$invalidate(0, isOpen = !isOpen);
-    	const writable_props = [];
+    	const toggle = () => $$invalidate(2, isOpen = !isOpen);
+
+    	$$self.$$.on_mount.push(function () {
+    		if (airline === undefined && !('airline' in $$props || $$self.$$.bound[$$self.$$.props['airline']])) {
+    			console.warn("<Airline> was created without expected prop 'airline'");
+    		}
+
+    		if (date === undefined && !('date' in $$props || $$self.$$.bound[$$self.$$.props['date']])) {
+    			console.warn("<Airline> was created without expected prop 'date'");
+    		}
+    	});
+
+    	const writable_props = ['airline', 'date'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Airline> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ slide, isOpen, toggle });
+    	$$self.$$set = $$props => {
+    		if ('airline' in $$props) $$invalidate(0, airline = $$props.airline);
+    		if ('date' in $$props) $$invalidate(1, date = $$props.date);
+    	};
+
+    	$$self.$capture_state = () => ({ slide, airline, date, isOpen, toggle });
 
     	$$self.$inject_state = $$props => {
-    		if ('isOpen' in $$props) $$invalidate(0, isOpen = $$props.isOpen);
+    		if ('airline' in $$props) $$invalidate(0, airline = $$props.airline);
+    		if ('date' in $$props) $$invalidate(1, date = $$props.date);
+    		if ('isOpen' in $$props) $$invalidate(2, isOpen = $$props.isOpen);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [isOpen, toggle];
+    	return [airline, date, isOpen, toggle];
     }
 
     class Airline extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { airline: 0, date: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -21238,6 +21301,22 @@ var app = (function () {
     			options,
     			id: create_fragment$1.name
     		});
+    	}
+
+    	get airline() {
+    		throw new Error("<Airline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set airline(value) {
+    		throw new Error("<Airline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get date() {
+    		throw new Error("<Airline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set date(value) {
+    		throw new Error("<Airline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -21254,60 +21333,42 @@ var app = (function () {
 
     // (31:2) {#each airline as a}
     function create_each_block(ctx) {
-    	let div;
-    	let p;
-    	let t0_value = /*a*/ ctx[2].Designator + "";
-    	let t0;
-    	let t1;
+    	let airline_1;
+    	let current;
 
-    	let t2_value = (/*a*/ ctx[2]["Numeric Code"].toString().length == 2
-    	? "0" + /*a*/ ctx[2]["Numeric Code"]
-    	: /*a*/ ctx[2]["Numeric Code"]) + "";
-
-    	let t2;
-    	let t3;
-    	let t4_value = /*a*/ ctx[2]["Airline Name"] + "";
-    	let t4;
-    	let t5;
-    	let t6;
+    	airline_1 = new Airline({
+    			props: {
+    				airline: /*a*/ ctx[2],
+    				date: /*date*/ ctx[1]
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
-    			div = element("div");
-    			p = element("p");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			t2 = text(t2_value);
-    			t3 = space();
-    			t4 = text(t4_value);
-    			t5 = text("\n\t\tLatest Updates: ");
-    			t6 = text(/*date*/ ctx[1]);
-    			add_location(p, file, 32, 6, 1010);
-    			add_location(div, file, 31, 4, 998);
+    			create_component(airline_1.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, p);
-    			append_dev(p, t0);
-    			append_dev(p, t1);
-    			append_dev(p, t2);
-    			append_dev(p, t3);
-    			append_dev(p, t4);
-    			append_dev(p, t5);
-    			append_dev(p, t6);
+    			mount_component(airline_1, target, anchor);
+    			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*airline*/ 1 && t0_value !== (t0_value = /*a*/ ctx[2].Designator + "")) set_data_dev(t0, t0_value);
-
-    			if (dirty & /*airline*/ 1 && t2_value !== (t2_value = (/*a*/ ctx[2]["Numeric Code"].toString().length == 2
-    			? "0" + /*a*/ ctx[2]["Numeric Code"]
-    			: /*a*/ ctx[2]["Numeric Code"]) + "")) set_data_dev(t2, t2_value);
-
-    			if (dirty & /*airline*/ 1 && t4_value !== (t4_value = /*a*/ ctx[2]["Airline Name"] + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*date*/ 2) set_data_dev(t6, /*date*/ ctx[1]);
+    			const airline_1_changes = {};
+    			if (dirty & /*airline*/ 1) airline_1_changes.airline = /*a*/ ctx[2];
+    			if (dirty & /*date*/ 2) airline_1_changes.date = /*date*/ ctx[1];
+    			airline_1.$set(airline_1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(airline_1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(airline_1.$$.fragment, local);
+    			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
+    			destroy_component(airline_1, detaching);
     		}
     	};
 
@@ -21324,8 +21385,6 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let div;
-    	let t;
-    	let airline_1;
     	let current;
     	let each_value = /*airline*/ ctx[0];
     	validate_each_argument(each_value);
@@ -21335,7 +21394,9 @@ var app = (function () {
     		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
     	}
 
-    	airline_1 = new Airline({ $$inline: true });
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
 
     	const block = {
     		c: function create() {
@@ -21345,8 +21406,6 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t = space();
-    			create_component(airline_1.$$.fragment);
     			attr_dev(div, "class", "ndc-airlines");
     			set_style(div, "display", "inline-block");
     			add_location(div, file, 29, 0, 913);
@@ -21361,12 +21420,10 @@ var app = (function () {
     				each_blocks[i].m(div, null);
     			}
 
-    			append_dev(div, t);
-    			mount_component(airline_1, div, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*date, airline*/ 3) {
+    			if (dirty & /*airline, date*/ 3) {
     				each_value = /*airline*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -21376,33 +21433,45 @@ var app = (function () {
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div, t);
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div, null);
     					}
     				}
 
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
     				}
 
-    				each_blocks.length = each_value.length;
+    				check_outros();
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(airline_1.$$.fragment, local);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(airline_1.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			destroy_each(each_blocks, detaching);
-    			destroy_component(airline_1);
     		}
     	};
 
