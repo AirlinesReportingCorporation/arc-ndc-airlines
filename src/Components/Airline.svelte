@@ -81,6 +81,10 @@
     stroke-width: 25px;
   }
 
+  button:focus {
+    outline: none;
+}
+
   .air-designator {
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
     background: #1d9cb1;

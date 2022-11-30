@@ -21910,18 +21910,18 @@ var app = (function () {
     			span.textContent = "Latest Updates:";
     			t7 = space();
     			t8 = text(/*date*/ ctx[1]);
-    			attr_dev(div0, "class", "air-designator svelte-1ictwlt");
+    			attr_dev(div0, "class", "air-designator svelte-1lpjcs");
     			add_location(div0, file$1, 22, 14, 693);
-    			attr_dev(div1, "class", "air-code svelte-1ictwlt");
+    			attr_dev(div1, "class", "air-code svelte-1lpjcs");
     			add_location(div1, file$1, 23, 14, 762);
     			set_style(div2, "display", "flex");
     			set_style(div2, "align-items", "center");
     			add_location(div2, file$1, 21, 12, 632);
-    			attr_dev(div3, "class", "air-name svelte-1ictwlt");
+    			attr_dev(div3, "class", "air-name svelte-1lpjcs");
     			add_location(div3, file$1, 29, 12, 996);
-    			attr_dev(span, "class", "svelte-1ictwlt");
+    			attr_dev(span, "class", "svelte-1lpjcs");
     			add_location(span, file$1, 32, 16, 1193);
-    			attr_dev(div4, "class", "air-updated svelte-1ictwlt");
+    			attr_dev(div4, "class", "air-updated svelte-1lpjcs");
     			set_style(div4, "margin-right", "0px");
     			add_location(div4, file$1, 31, 14, 1124);
     			attr_dev(div5, "class", "ml-auto d-flex align-items-center");
@@ -21992,7 +21992,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			create_component(fa.$$.fragment);
-    			attr_dev(button, "class", "expand svelte-1ictwlt");
+    			attr_dev(button, "class", "expand svelte-1lpjcs");
     			attr_dev(button, "aria-expanded", /*isOpen*/ ctx[2]);
     			add_location(button, file$1, 39, 10, 1381);
     		},
@@ -22202,11 +22202,11 @@ var app = (function () {
     			create_component(mdbrow.$$.fragment);
     			t = space();
     			if (if_block) if_block.c();
-    			attr_dev(div0, "class", "accordion-start svelte-1ictwlt");
+    			attr_dev(div0, "class", "accordion-start svelte-1lpjcs");
     			add_location(div0, file$1, 14, 4, 385);
-    			attr_dev(div1, "class", "accordion-top svelte-1ictwlt");
+    			attr_dev(div1, "class", "accordion-top svelte-1lpjcs");
     			add_location(div1, file$1, 13, 2, 353);
-    			attr_dev(div2, "class", "airline-accordion svelte-1ictwlt");
+    			attr_dev(div2, "class", "airline-accordion svelte-1lpjcs");
     			add_location(div2, file$1, 12, 0, 319);
     		},
     		l: function claim(nodes) {
