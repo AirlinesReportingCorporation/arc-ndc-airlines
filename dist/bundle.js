@@ -21035,6 +21035,8 @@ var app = (function () {
     	}
     };
 
+    function t(){}function l(t,e){for(const l in e)t[l]=e[l];return t}function n(t){return t()}function s(){return Object.create(null)}function o(t){t.forEach(n);}function c(t){return "function"==typeof t}function r(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function i(t,e,l,n){if(t){const s=u(t,e,l,n);return t[0](s)}}function u(t,e,n,s){return t[1]&&s?l(n.ctx.slice(),t[1](s(e))):n.ctx}function d(t,e,l,n,s,o,c){const r=function(t,e,l,n){if(t[2]&&n){const s=t[2](n(l));if(void 0===e.dirty)return s;if("object"==typeof s){const t=[],l=Math.max(e.dirty.length,s.length);for(let n=0;n<l;n+=1)t[n]=e.dirty[n]|s[n];return t}return e.dirty|s}return e.dirty}(e,n,s,o);if(r){const s=u(e,l,n,c);t.p(s,r);}}function p(t){const e={};for(const l in t)"$"!==l[0]&&(e[l]=t[l]);return e}function f(e){return e&&c(e.destroy)?e.destroy:t}function y(t,e,l){t.insertBefore(e,l||null);}function x(t){t.parentNode.removeChild(t);}function E(t){return document.createElement(t)}function z(t,e,l,n){return t.addEventListener(e,l,n),()=>t.removeEventListener(e,l,n)}function L(t,e,l){null==l?t.removeAttribute(e):t.getAttribute(e)!==l&&t.setAttribute(e,l);}function A(t,e){const l=Object.getOwnPropertyDescriptors(t.__proto__);for(const n in e)null==e[n]?t.removeAttribute(n):"style"===n?t.style.cssText=e[n]:"__value"===n?t.value=t[n]=e[n]:l[n]&&l[n].set?t[n]=e[n]:L(t,n,e[n]);}function T(t){return Array.from(t.childNodes)}function O(t,e,l,n){for(let n=0;n<t.length;n+=1){const s=t[n];if(s.nodeName===e){let e=0;const o=[];for(;e<s.attributes.length;){const t=s.attributes[e++];l[t.name]||o.push(t.name);}for(let t=0;t<o.length;t++)s.removeAttribute(o[t]);return t.splice(n,1)[0]}}return n?function(t){return document.createElementNS("http://www.w3.org/2000/svg",t)}(e):E(e)}let W;function q(t){W=t;}function K(t,e){const l=t.$$.callbacks[e.type];l&&l.slice().forEach(t=>t(e));}const Q=[],Z=[],tt=[],et=[],lt=Promise.resolve();let nt=!1;function st(t){tt.push(t);}let ct=!1;const rt=new Set;function at(){if(!ct){ct=!0;do{for(let t=0;t<Q.length;t+=1){const e=Q[t];q(e),it(e.$$);}for(Q.length=0;Z.length;)Z.pop()();for(let t=0;t<tt.length;t+=1){const e=tt[t];rt.has(e)||(rt.add(e),e());}tt.length=0;}while(Q.length);for(;et.length;)et.pop()();nt=!1,ct=!1,rt.clear();}}function it(t){if(null!==t.fragment){t.update(),o(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(st);}}const pt=new Set;let ft;function mt(t,e){t&&t.i&&(pt.delete(t),t.i(e));}function gt(t,e,l,n){if(t&&t.o){if(pt.has(t))return;pt.add(t),ft.c.push(()=>{pt.delete(t),n&&(l&&t.d(1),n());}),t.o(e);}}function yt(t,e){const l={},n={},s={$$scope:1};let o=t.length;for(;o--;){const c=t[o],r=e[o];if(r){for(const t in c)t in r||(n[t]=1);for(const t in r)s[t]||(l[t]=r[t],s[t]=1);t[o]=r;}else for(const t in c)s[t]=1;}for(const t in n)t in l||(l[t]=void 0);return l}function Ct(t,e,l){const{fragment:s,on_mount:r,on_destroy:a,after_update:i}=t.$$;s&&s.m(e,l),st(()=>{const e=r.map(n).filter(c);a?a.push(...e):o(e),t.$$.on_mount=[];}),i.forEach(st);}function Nt(t,e){const l=t.$$;null!==l.fragment&&(o(l.on_destroy),l.fragment&&l.fragment.d(e),l.on_destroy=l.fragment=null,l.ctx=[]);}function zt(t,e){-1===t.$$.dirty[0]&&(Q.push(t),nt||(nt=!0,lt.then(at)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31;}function Lt(e,l,n,c,r,a,i=[-1]){const u=W;q(e);const d=l.props||{},p=e.$$={fragment:null,ctx:null,props:a,update:t,not_equal:r,bound:s(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(u?u.$$.context:[]),callbacks:s(),dirty:i};let f=!1;if(p.ctx=n?n(e,d,(t,l,...n)=>{const s=n.length?n[0]:l;return p.ctx&&r(p.ctx[t],p.ctx[t]=s)&&(p.bound[t]&&p.bound[t](s),f&&zt(e,t)),l}):[],p.update(),f=!0,o(p.before_update),p.fragment=!!c&&c(p.ctx),l.target){if(l.hydrate){const t=T(l.target);p.fragment&&p.fragment.l(t),t.forEach(x);}else p.fragment&&p.fragment.c();l.intro&&mt(e.$$.fragment),Ct(e,l.target,l.anchor),at();}q(u);}class At{$destroy(){Nt(this,1),this.$destroy=t;}$on(t,e){const l=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return l.push(e),()=>{const t=l.indexOf(e);-1!==t&&l.splice(t,1);}}$set(){}}function Tt(t,e){let l=["children","$$scope","$$slots"].concat(e);const n={};for(const e of Object.keys(t))l.includes(e)||(n[e]=t[e]);return n}function It(t,e,l){return !0===l||""===l?t?"col":"col-"+e:"auto"===l?t?"col-auto":`col-${e}-auto`:t?"col-"+l:`col-${e}-${l}`}function Vt(t,e=[]){const l=["focus","blur","change","input","update","submit","fullscreenchange","fullscreenerror","scroll","cut","copy","paste","keydown","keypress","keyup","auxclick","click","contextmenu","dblclick","mousedown","mouseenter","mouseleave","mousemove","mouseover","mouseout","mouseup","pointerlockchange","pointerlockerror","select","wheel","drag","dragend","dragenter","dragstart","dragleave","dragover","drop","touchcancel","touchend","touchmove","touchstart","pointerover","pointerenter","pointerdown","pointermove","pointerup","pointercancel","pointerout","pointerleave","gotpointercapture","lostpointercapture",...e];function n(e){K(t,e);}return t=>{const e=[];for(let s=0;s<l.length;s++)e.push(z(t,l[s],n));return {destroy:()=>{for(let t=0;t<e.length;t++)e[t]();}}}}function Rt(t){let e,n,o,c,r;const a=t[7].default,u=i(a,t,t[6],null);let p=[t[1],{class:n=t[2].join(" ")}],h={};for(let t=0;t<p.length;t+=1)h=l(h,p[t]);return {c(){e=E("div"),u&&u.c(),this.h();},l(t){e=O(t,"DIV",{class:!0});var l=T(e);u&&u.l(l),l.forEach(x),this.h();},h(){A(e,h);},m(l,n){y(l,e,n),u&&u.m(e,null),o=!0,c||(r=f(t[0].call(null,e)),c=!0);},p(t,[l]){u&&u.p&&64&l&&d(u,a,t,t[6],l,null,null),A(e,h=yt(p,[t[1],{class:n}]));},i(t){o||(mt(u,t),o=!0);},o(t){gt(u,t),o=!1;},d(t){t&&x(e),u&&u.d(t),c=!1,r();}}}function Mt(t,e,n){const s=Vt(W);let{class:o=""}=e,{noGutters:c=!1}=e,{form:r=!1}=e;const a=Tt(e,[]);let i=[],u=["start","center","end","around","between"];for(let t in u)a[u[t]]&&i.push("justify-content-"+u[t]);o&&i.push(o),r?i.push("form-row"):i.push("row"),c&&i.push("no-gutters");let{$$slots:d={},$$scope:f}=e;return t.$set=t=>{n(9,e=l(l({},e),p(t))),"class"in t&&n(3,o=t.class),"noGutters"in t&&n(4,c=t.noGutters),"form"in t&&n(5,r=t.form),"$$scope"in t&&n(6,f=t.$$scope);},e=p(e),[s,a,i,o,c,r,f,d]}class Wt extends At{constructor(t){super(),Lt(this,t,Mt,Rt,r,{class:3,noGutters:4,form:5});}}function Gt(t){let e,n,o,c,r;const a=t[6].default,u=i(a,t,t[5],null);let p=[t[2],{class:n=t[1].join(" ")}],h={};for(let t=0;t<p.length;t+=1)h=l(h,p[t]);return {c(){e=E("div"),u&&u.c(),this.h();},l(t){e=O(t,"DIV",{class:!0});var l=T(e);u&&u.l(l),l.forEach(x),this.h();},h(){A(e,h);},m(l,n){y(l,e,n),u&&u.m(e,null),o=!0,c||(r=f(t[0].call(null,e)),c=!0);},p(t,[l]){u&&u.p&&32&l&&d(u,a,t,t[5],l,null,null),A(e,h=yt(p,[t[2],{class:n}]));},i(t){o||(mt(u,t),o=!0);},o(t){gt(u,t),o=!1;},d(t){t&&x(e),u&&u.d(t),c=!1,r();}}}function Ut(t,e,n){const s=Vt(W);let{class:o=""}=e,{size:c}=e;const r=[],a=["xs","sm","md","lg","xl"],i=Tt(e,[...a].concat(["size"]));a.forEach(t=>{const l=e[t];if(!l&&""!==l)return;const n="xs"===t;if(function(t){const e=typeof t;return null!=t&&("object"==e||"function"==e)}(l)){const e=n?"-":`-${t}-`,s=It(n,t,l.size);(l.size||""===l.size)&&r.push(s),l.push&&r.push(`push${e}${l.push}`),l.pull&&r.push(`pull${e}${l.pull}`),l.offset&&r.push(`offset${e}${l.offset}`);}else r.push(It(n,t,l));}),c&&r.push("col-"+c),r.length||r.push("col"),o&&r.push(o);let{$$slots:u={},$$scope:d}=e;return t.$set=t=>{n(8,e=l(l({},e),p(t))),"class"in t&&n(3,o=t.class),"size"in t&&n(4,c=t.size),"$$scope"in t&&n(5,d=t.$$scope);},e=p(e),[s,r,i,o,c,d,u]}class Xt extends At{constructor(t){super(),Lt(this,t,Ut,Gt,r,{class:3,size:4});}}var Vs="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function js(t,e){return t(e={exports:{}},e.exports),e.exports}var Bs=js((function(t,e){!function(e,l){t.exports=l.call(e);}(Vs,(function(){var t=t||{},e=document.querySelectorAll.bind(document),l=Object.prototype.toString,n="ontouchstart"in window;function s(t){var e=typeof t;return "function"===e||"object"===e&&!!t}function o(t){var n,o=l.call(t);return "[object String]"===o?e(t):s(t)&&/^\[object (Array|HTMLCollection|NodeList|Object)\]$/.test(o)&&t.hasOwnProperty("length")?t:s(n=t)&&n.nodeType>0?[t]:[]}function c(t){var e,l,n={top:0,left:0},s=t&&t.ownerDocument;return e=s.documentElement,void 0!==t.getBoundingClientRect&&(n=t.getBoundingClientRect()),l=function(t){return null!==(e=t)&&e===e.window?t:9===t.nodeType&&t.defaultView;var e;}(s),{top:n.top+l.pageYOffset-e.clientTop,left:n.left+l.pageXOffset-e.clientLeft}}function r(t){var e="";for(var l in t)t.hasOwnProperty(l)&&(e+=l+":"+t[l]+";");return e}var a={duration:750,delay:200,show:function(t,e,l){if(2===t.button)return !1;e=e||this;var n=document.createElement("div");n.className="waves-ripple waves-rippling",e.appendChild(n);var s=c(e),o=0,i=0;"touches"in t&&t.touches.length?(o=t.touches[0].pageY-s.top,i=t.touches[0].pageX-s.left):(o=t.pageY-s.top,i=t.pageX-s.left),i=i>=0?i:0,o=o>=0?o:0;var u="scale("+e.clientWidth/100*3+")",d="translate(0,0)";l&&(d="translate("+l.x+"px, "+l.y+"px)"),n.setAttribute("data-hold",Date.now()),n.setAttribute("data-x",i),n.setAttribute("data-y",o),n.setAttribute("data-scale",u),n.setAttribute("data-translate",d);var p={top:o+"px",left:i+"px"};n.classList.add("waves-notransition"),n.setAttribute("style",r(p)),n.classList.remove("waves-notransition"),p["-webkit-transform"]=u+" "+d,p["-moz-transform"]=u+" "+d,p["-ms-transform"]=u+" "+d,p["-o-transform"]=u+" "+d,p.transform=u+" "+d,p.opacity="1";var f="mousemove"===t.type?2500:a.duration;p["-webkit-transition-duration"]=f+"ms",p["-moz-transition-duration"]=f+"ms",p["-o-transition-duration"]=f+"ms",p["transition-duration"]=f+"ms",n.setAttribute("style",r(p));},hide:function(t,e){for(var l=(e=e||this).getElementsByClassName("waves-rippling"),s=0,o=l.length;s<o;s++)u(t,e,l[s]);n&&(e.removeEventListener("touchend",a.hide),e.removeEventListener("touchcancel",a.hide)),e.removeEventListener("mouseup",a.hide),e.removeEventListener("mouseleave",a.hide);}},i={input:function(t){var e=t.parentNode;if("i"!==e.tagName.toLowerCase()||!e.classList.contains("waves-effect")){var l=document.createElement("i");l.className=t.className+" waves-input-wrapper",t.className="waves-button-input",e.replaceChild(l,t),l.appendChild(t);var n=window.getComputedStyle(t,null),s=n.color,o=n.backgroundColor;l.setAttribute("style","color:"+s+";background:"+o),t.setAttribute("style","background-color:rgba(0,0,0,0);");}},img:function(t){var e=t.parentNode;if("i"!==e.tagName.toLowerCase()||!e.classList.contains("waves-effect")){var l=document.createElement("i");e.replaceChild(l,t),l.appendChild(t);}}};function u(t,e,l){if(l){l.classList.remove("waves-rippling");var n=l.getAttribute("data-x"),s=l.getAttribute("data-y"),o=l.getAttribute("data-scale"),c=l.getAttribute("data-translate"),i=350-(Date.now()-Number(l.getAttribute("data-hold")));i<0&&(i=0),"mousemove"===t.type&&(i=150);var u="mousemove"===t.type?2500:a.duration;setTimeout((function(){var t={top:s+"px",left:n+"px",opacity:"0","-webkit-transition-duration":u+"ms","-moz-transition-duration":u+"ms","-o-transition-duration":u+"ms","transition-duration":u+"ms","-webkit-transform":o+" "+c,"-moz-transform":o+" "+c,"-ms-transform":o+" "+c,"-o-transform":o+" "+c,transform:o+" "+c};l.setAttribute("style",r(t)),setTimeout((function(){try{e.removeChild(l);}catch(t){return !1}}),u);}),i);}}var d={touches:0,allowEvent:function(t){var e=!0;return /^(mousedown|mousemove)$/.test(t.type)&&d.touches&&(e=!1),e},registerEvent:function(t){var e=t.type;"touchstart"===e?d.touches+=1:/^(touchend|touchcancel)$/.test(e)&&setTimeout((function(){d.touches&&(d.touches-=1);}),500);}};function p(t){var e=function(t){if(!1===d.allowEvent(t))return null;for(var e=null,l=t.target||t.srcElement;l.parentElement;){if(!(l instanceof SVGElement)&&l.classList.contains("waves-effect")){e=l;break}l=l.parentElement;}return e}(t);if(null!==e){if(e.disabled||e.getAttribute("disabled")||e.classList.contains("disabled"))return;if(d.registerEvent(t),"touchstart"===t.type&&a.delay){var l=!1,s=setTimeout((function(){s=null,a.show(t,e);}),a.delay),o=function(n){s&&(clearTimeout(s),s=null,a.show(t,e)),l||(l=!0,a.hide(n,e)),r();},c=function(t){s&&(clearTimeout(s),s=null),o(t),r();};e.addEventListener("touchmove",c,!1),e.addEventListener("touchend",o,!1),e.addEventListener("touchcancel",o,!1);var r=function(){e.removeEventListener("touchmove",c),e.removeEventListener("touchend",o),e.removeEventListener("touchcancel",o);};}else a.show(t,e),n&&(e.addEventListener("touchend",a.hide,!1),e.addEventListener("touchcancel",a.hide,!1)),e.addEventListener("mouseup",a.hide,!1),e.addEventListener("mouseleave",a.hide,!1);}}return t.init=function(t){var e=document.body;"duration"in(t=t||{})&&(a.duration=t.duration),"delay"in t&&(a.delay=t.delay),n&&(e.addEventListener("touchstart",p,!1),e.addEventListener("touchcancel",d.registerEvent,!1),e.addEventListener("touchend",d.registerEvent,!1)),e.addEventListener("mousedown",p,!1);},t.attach=function(t,e){var n,s;t=o(t),"[object Array]"===l.call(e)&&(e=e.join(" ")),e=e?" "+e:"";for(var c=0,r=t.length;c<r;c++)s=(n=t[c]).tagName.toLowerCase(),-1!==["input","img"].indexOf(s)&&(i[s](n),n=n.parentElement),-1===n.className.indexOf("waves-effect")&&(n.className+=" waves-effect"+e);},t.ripple=function(t,e){var l=(t=o(t)).length;if((e=e||{}).wait=e.wait||0,e.position=e.position||null,l)for(var n,s,r,i={},u=0,d={type:"mousedown",button:1},p=function(t,e){return function(){a.hide(t,e);}};u<l;u++)if(n=t[u],s=e.position||{x:n.clientWidth/2,y:n.clientHeight/2},r=c(n),i.x=r.left+s.x,i.y=r.top+s.y,d.pageX=i.x,d.pageY=i.y,a.show(d,n),e.wait>=0&&null!==e.wait){setTimeout(p({type:"mouseup",button:1},n),e.wait);}},t.calm=function(t){for(var e={type:"mouseup",button:1},l=0,n=(t=o(t)).length;l<n;l++)a.hide(e,t[l]);},t.displayEffect=function(e){console.error("Waves.displayEffect() has been deprecated and will be removed in future version. Please use Waves.init() to initialize Waves effect"),t.init(e);},t}));}));js((function(t){var e,l;e=Vs,l=function(){var t="undefined"==typeof window,e=new Map,l=new Map,n=[];n.total=0;var s=[],o=[];function c(){e.clear(),l.clear(),s=[],o=[];}function r(t){for(var e=-9007199254740991,l=t.length-1;l>=0;--l){var n=t[l];if(null!==n){var s=n.score;s>e&&(e=s);}}return -9007199254740991===e?null:e}function a(t,e){var l=t[e];if(void 0!==l)return l;var n=e;Array.isArray(e)||(n=e.split("."));for(var s=n.length,o=-1;t&&++o<s;)t=t[n[o]];return t}function i(t){return "object"==typeof t}var u=function(){var t=[],e=0,l={};function n(){for(var l=0,n=t[l],s=1;s<e;){var o=s+1;l=s,o<e&&t[o].score<t[s].score&&(l=o),t[l-1>>1]=t[l],s=1+(l<<1);}for(var c=l-1>>1;l>0&&n.score<t[c].score;c=(l=c)-1>>1)t[l]=t[c];t[l]=n;}return l.add=function(l){var n=e;t[e++]=l;for(var s=n-1>>1;n>0&&l.score<t[s].score;s=(n=s)-1>>1)t[n]=t[s];t[n]=l;},l.poll=function(){if(0!==e){var l=t[0];return t[0]=t[--e],n(),l}},l.peek=function(l){if(0!==e)return t[0]},l.replaceTop=function(e){t[0]=e,n();},l},d=u();return function p(f){var h={single:function(t,e,l){return t?(i(t)||(t=h.getPreparedSearch(t)),e?(i(e)||(e=h.getPrepared(e)),((l&&void 0!==l.allowTypo?l.allowTypo:!f||void 0===f.allowTypo||f.allowTypo)?h.algorithm:h.algorithmNoTypo)(t,e,t[0])):null):null},go:function(t,e,l){if(!t)return n;var s=(t=h.prepareSearch(t))[0],o=l&&l.threshold||f&&f.threshold||-9007199254740991,c=l&&l.limit||f&&f.limit||9007199254740991,u=(l&&void 0!==l.allowTypo?l.allowTypo:!f||void 0===f.allowTypo||f.allowTypo)?h.algorithm:h.algorithmNoTypo,p=0,$=0,m=e.length;if(l&&l.keys)for(var g=l.scoreFn||r,v=l.keys,b=v.length,y=m-1;y>=0;--y){for(var x=e[y],w=new Array(b),E=b-1;E>=0;--E)(N=a(x,C=v[E]))?(i(N)||(N=h.getPrepared(N)),w[E]=u(t,N,s)):w[E]=null;w.obj=x;var k=g(w);null!==k&&(k<o||(w.score=k,p<c?(d.add(w),++p):(++$,k>d.peek().score&&d.replaceTop(w))));}else if(l&&l.key){var C=l.key;for(y=m-1;y>=0;--y)(N=a(x=e[y],C))&&(i(N)||(N=h.getPrepared(N)),null!==(z=u(t,N,s))&&(z.score<o||(z={target:z.target,_targetLowerCodes:null,_nextBeginningIndexes:null,score:z.score,indexes:z.indexes,obj:x},p<c?(d.add(z),++p):(++$,z.score>d.peek().score&&d.replaceTop(z)))));}else for(y=m-1;y>=0;--y){var N,z;(N=e[y])&&(i(N)||(N=h.getPrepared(N)),null!==(z=u(t,N,s))&&(z.score<o||(p<c?(d.add(z),++p):(++$,z.score>d.peek().score&&d.replaceTop(z)))));}if(0===p)return n;var L=new Array(p);for(y=p-1;y>=0;--y)L[y]=d.poll();return L.total=p+$,L},goAsync:function(e,l,s){var o=!1,c=new Promise((function(c,d){if(!e)return c(n);var p=(e=h.prepareSearch(e))[0],$=u(),m=l.length-1,g=s&&s.threshold||f&&f.threshold||-9007199254740991,v=s&&s.limit||f&&f.limit||9007199254740991,b=(s&&void 0!==s.allowTypo?s.allowTypo:!f||void 0===f.allowTypo||f.allowTypo)?h.algorithm:h.algorithmNoTypo,y=0,x=0;function w(){if(o)return d("canceled");var u=Date.now();if(s&&s.keys)for(var f=s.scoreFn||r,E=s.keys,k=E.length;m>=0;--m){for(var C=l[m],N=new Array(k),z=k-1;z>=0;--z)(T=a(C,A=E[z]))?(i(T)||(T=h.getPrepared(T)),N[z]=b(e,T,p)):N[z]=null;N.obj=C;var L=f(N);if(null!==L&&!(L<g)&&(N.score=L,y<v?($.add(N),++y):(++x,L>$.peek().score&&$.replaceTop(N)),m%1e3==0&&Date.now()-u>=10))return void(t?setImmediate(w):setTimeout(w))}else if(s&&s.key){for(var A=s.key;m>=0;--m)if((T=a(C=l[m],A))&&(i(T)||(T=h.getPrepared(T)),null!==(O=b(e,T,p))&&!(O.score<g)&&(O={target:O.target,_targetLowerCodes:null,_nextBeginningIndexes:null,score:O.score,indexes:O.indexes,obj:C},y<v?($.add(O),++y):(++x,O.score>$.peek().score&&$.replaceTop(O)),m%1e3==0&&Date.now()-u>=10)))return void(t?setImmediate(w):setTimeout(w))}else for(;m>=0;--m){var T,O;if((T=l[m])&&(i(T)||(T=h.getPrepared(T)),null!==(O=b(e,T,p))&&!(O.score<g)&&(y<v?($.add(O),++y):(++x,O.score>$.peek().score&&$.replaceTop(O)),m%1e3==0&&Date.now()-u>=10)))return void(t?setImmediate(w):setTimeout(w))}if(0===y)return c(n);for(var _=new Array(y),I=y-1;I>=0;--I)_[I]=$.poll();_.total=y+x,c(_);}t?setImmediate(w):w();}));return c.cancel=function(){o=!0;},c},highlight:function(t,e,l){if(null===t)return null;void 0===e&&(e="<b>"),void 0===l&&(l="</b>");for(var n="",s=0,o=!1,c=t.target,r=c.length,a=t.indexes,i=0;i<r;++i){var u=c[i];if(a[s]===i){if(o||(o=!0,n+=e),++s===a.length){n+=u+l+c.substr(i+1);break}}else o&&(o=!1,n+=l);n+=u;}return n},prepare:function(t){if(t)return {target:t,_targetLowerCodes:h.prepareLowerCodes(t),_nextBeginningIndexes:null,score:null,indexes:null,obj:null}},prepareSlow:function(t){if(t)return {target:t,_targetLowerCodes:h.prepareLowerCodes(t),_nextBeginningIndexes:h.prepareNextBeginningIndexes(t),score:null,indexes:null,obj:null}},prepareSearch:function(t){if(t)return h.prepareLowerCodes(t)},getPrepared:function(t){if(t.length>999)return h.prepare(t);var l=e.get(t);return void 0!==l||(l=h.prepare(t),e.set(t,l)),l},getPreparedSearch:function(t){if(t.length>999)return h.prepareSearch(t);var e=l.get(t);return void 0!==e||(e=h.prepareSearch(t),l.set(t,e)),e},algorithm:function(t,e,l){for(var n=e._targetLowerCodes,c=t.length,r=n.length,a=0,i=0,u=0,d=0;;){if(l===n[i]){if(s[d++]=i,++a===c)break;l=t[0===u?a:u===a?a+1:u===a-1?a-1:a];}if(++i>=r)for(;;){if(a<=1)return null;if(0===u){if(l===t[--a])continue;u=a;}else {if(1===u)return null;if((l=t[1+(a=--u)])===t[a])continue}i=s[(d=a)-1]+1;break}}a=0;var p=0,f=!1,$=0,m=e._nextBeginningIndexes;null===m&&(m=e._nextBeginningIndexes=h.prepareNextBeginningIndexes(e.target));var g=i=0===s[0]?0:m[s[0]-1];if(i!==r)for(;;)if(i>=r){if(a<=0){if(++p>c-2)break;if(t[p]===t[p+1])continue;i=g;continue}--a,i=m[o[--$]];}else if(t[0===p?a:p===a?a+1:p===a-1?a-1:a]===n[i]){if(o[$++]=i,++a===c){f=!0;break}++i;}else i=m[i];if(f)var v=o,b=$;else v=s,b=d;for(var y=0,x=-1,w=0;w<c;++w)x!==(i=v[w])-1&&(y-=i),x=i;for(f?0!==p&&(y+=-20):(y*=1e3,0!==u&&(y+=-20)),y-=r-c,e.score=y,e.indexes=new Array(b),w=b-1;w>=0;--w)e.indexes[w]=v[w];return e},algorithmNoTypo:function(t,e,l){for(var n=e._targetLowerCodes,c=t.length,r=n.length,a=0,i=0,u=0;;){if(l===n[i]){if(s[u++]=i,++a===c)break;l=t[a];}if(++i>=r)return null}a=0;var d=!1,p=0,f=e._nextBeginningIndexes;if(null===f&&(f=e._nextBeginningIndexes=h.prepareNextBeginningIndexes(e.target)),(i=0===s[0]?0:f[s[0]-1])!==r)for(;;)if(i>=r){if(a<=0)break;--a,i=f[o[--p]];}else if(t[a]===n[i]){if(o[p++]=i,++a===c){d=!0;break}++i;}else i=f[i];if(d)var $=o,m=p;else $=s,m=u;for(var g=0,v=-1,b=0;b<c;++b)v!==(i=$[b])-1&&(g-=i),v=i;for(d||(g*=1e3),g-=r-c,e.score=g,e.indexes=new Array(m),b=m-1;b>=0;--b)e.indexes[b]=$[b];return e},prepareLowerCodes:function(t){for(var e=t.length,l=[],n=t.toLowerCase(),s=0;s<e;++s)l[s]=n.charCodeAt(s);return l},prepareBeginningIndexes:function(t){for(var e=t.length,l=[],n=0,s=!1,o=!1,c=0;c<e;++c){var r=t.charCodeAt(c),a=r>=65&&r<=90,i=a||r>=97&&r<=122||r>=48&&r<=57,u=a&&!s||!o||!i;s=a,o=i,u&&(l[n++]=c);}return l},prepareNextBeginningIndexes:function(t){for(var e=t.length,l=h.prepareBeginningIndexes(t),n=[],s=l[0],o=0,c=0;c<e;++c)s>c?n[c]=s:(s=l[++o],n[c]=void 0===s?e:s);return n},cleanup:c,new:p};return h}()},t.exports?t.exports=l():e.fuzzysort=l();}));Bs.init();
+
     function cubicOut(t) {
         const f = t - 1.0;
         return f * f * f + 1.0;
@@ -21863,10 +21865,8 @@ var app = (function () {
     /* src/Components/Airline.svelte generated by Svelte v3.53.1 */
     const file$1 = "src/Components/Airline.svelte";
 
-    // (33:0) {#if isOpen}
-    function create_if_block(ctx) {
-    	let div8;
-    	let div7;
+    // (16:2) <MDBCol size="11">
+    function create_default_slot_2(ctx) {
     	let div6;
     	let div2;
     	let div0;
@@ -21890,13 +21890,9 @@ var app = (function () {
     	let span;
     	let t7;
     	let t8;
-    	let div8_transition;
-    	let current;
 
     	const block = {
     		c: function create() {
-    			div8 = element("div");
-    			div7 = element("div");
     			div6 = element("div");
     			div2 = element("div");
     			div0 = element("div");
@@ -21914,30 +21910,27 @@ var app = (function () {
     			span.textContent = "Latest Updates:";
     			t7 = space();
     			t8 = text(/*date*/ ctx[1]);
-    			attr_dev(div0, "class", "apDesignator");
-    			add_location(div0, file$1, 37, 10, 1286);
-    			attr_dev(div1, "class", "apCode");
-    			add_location(div1, file$1, 38, 10, 1349);
-    			attr_dev(div2, "class", "d-flex align-items-center");
-    			add_location(div2, file$1, 36, 8, 1236);
-    			attr_dev(div3, "class", "apName");
-    			add_location(div3, file$1, 44, 8, 1557);
-    			add_location(span, file$1, 47, 12, 1738);
-    			attr_dev(div4, "class", "apUpdated");
+    			attr_dev(div0, "class", "air-designator svelte-y4o47i");
+    			add_location(div0, file$1, 18, 8, 488);
+    			attr_dev(div1, "class", "air-code svelte-y4o47i");
+    			add_location(div1, file$1, 19, 8, 551);
+    			set_style(div2, "display", "flex");
+    			set_style(div2, "align-items", "center");
+    			add_location(div2, file$1, 17, 6, 433);
+    			attr_dev(div3, "class", "air-name svelte-y4o47i");
+    			add_location(div3, file$1, 25, 6, 749);
+    			attr_dev(span, "class", "svelte-y4o47i");
+    			add_location(span, file$1, 28, 10, 928);
+    			attr_dev(div4, "class", "air-updated svelte-y4o47i");
     			set_style(div4, "margin-right", "0px");
-    			add_location(div4, file$1, 46, 10, 1675);
+    			add_location(div4, file$1, 27, 8, 865);
     			attr_dev(div5, "class", "ml-auto d-flex align-items-center");
-    			add_location(div5, file$1, 45, 8, 1617);
+    			add_location(div5, file$1, 26, 6, 809);
     			attr_dev(div6, "class", "d-flex flex-column flex-lg-row");
-    			add_location(div6, file$1, 35, 6, 1183);
-    			attr_dev(div7, "class", "col-lg-11");
-    			add_location(div7, file$1, 34, 4, 1153);
-    			add_location(div8, file$1, 33, 2, 1106);
+    			add_location(div6, file$1, 16, 4, 382);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div8, anchor);
-    			append_dev(div8, div7);
-    			append_dev(div7, div6);
+    			insert_dev(target, div6, anchor);
     			append_dev(div6, div2);
     			append_dev(div2, div0);
     			append_dev(div0, t0);
@@ -21953,82 +21946,37 @@ var app = (function () {
     			append_dev(div4, span);
     			append_dev(div4, t7);
     			append_dev(div4, t8);
-    			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*airline*/ 1) && t0_value !== (t0_value = /*airline*/ ctx[0].Designator + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*airline*/ 1 && t0_value !== (t0_value = /*airline*/ ctx[0].Designator + "")) set_data_dev(t0, t0_value);
 
-    			if ((!current || dirty & /*airline*/ 1) && t2_value !== (t2_value = (/*airline*/ ctx[0]["Numeric Code"].toString().length == 2
+    			if (dirty & /*airline*/ 1 && t2_value !== (t2_value = (/*airline*/ ctx[0]["Numeric Code"].toString().length == 2
     			? "0" + /*airline*/ ctx[0]["Numeric Code"]
     			: /*airline*/ ctx[0]["Numeric Code"]) + "")) set_data_dev(t2, t2_value);
 
-    			if ((!current || dirty & /*airline*/ 1) && t4_value !== (t4_value = /*airline*/ ctx[0]["Airline Name"] + "")) set_data_dev(t4, t4_value);
-    			if (!current || dirty & /*date*/ 2) set_data_dev(t8, /*date*/ ctx[1]);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-
-    			add_render_callback(() => {
-    				if (!div8_transition) div8_transition = create_bidirectional_transition(div8, slide, { duration: 300 }, true);
-    				div8_transition.run(1);
-    			});
-
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			if (!div8_transition) div8_transition = create_bidirectional_transition(div8, slide, { duration: 300 }, false);
-    			div8_transition.run(0);
-    			current = false;
+    			if (dirty & /*airline*/ 1 && t4_value !== (t4_value = /*airline*/ ctx[0]["Airline Name"] + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*date*/ 2) set_data_dev(t8, /*date*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div8);
-    			if (detaching && div8_transition) div8_transition.end();
+    			if (detaching) detach_dev(div6);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
-    		type: "if",
-    		source: "(33:0) {#if isOpen}",
+    		id: create_default_slot_2.name,
+    		type: "slot",
+    		source: "(16:2) <MDBCol size=\\\"11\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    function create_fragment$1(ctx) {
-    	let div10;
-    	let div8;
-    	let div7;
-    	let div2;
-    	let div0;
-    	let t0_value = /*airline*/ ctx[0].Designator + "";
-    	let t0;
-    	let t1;
-    	let div1;
-
-    	let t2_value = (/*airline*/ ctx[0]["Numeric Code"].toString().length == 2
-    	? "0" + /*airline*/ ctx[0]["Numeric Code"]
-    	: /*airline*/ ctx[0]["Numeric Code"]) + "";
-
-    	let t2;
-    	let t3;
-    	let div4;
-    	let div3;
-    	let t4_value = /*airline*/ ctx[0]["Airline Name"] + "";
-    	let t4;
-    	let t5;
-    	let div6;
-    	let div5;
-    	let span;
-    	let t7;
-    	let t8;
-    	let t9;
-    	let div9;
+    // (35:2) <MDBCol size="1" class="ml-auto">
+    function create_default_slot_1$1(ctx) {
+    	let button;
     	let fa;
-    	let t10;
-    	let if_block_anchor;
     	let current;
     	let mounted;
     	let dispose;
@@ -22040,118 +21988,237 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let if_block = /*isOpen*/ ctx[2] && create_if_block(ctx);
-
     	const block = {
     		c: function create() {
-    			div10 = element("div");
-    			div8 = element("div");
-    			div7 = element("div");
-    			div2 = element("div");
-    			div0 = element("div");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			div1 = element("div");
-    			t2 = text(t2_value);
-    			t3 = space();
-    			div4 = element("div");
-    			div3 = element("div");
-    			t4 = text(t4_value);
-    			t5 = space();
-    			div6 = element("div");
-    			div5 = element("div");
-    			span = element("span");
-    			span.textContent = "Latest Updates:";
-    			t7 = space();
-    			t8 = text(/*date*/ ctx[1]);
-    			t9 = space();
-    			div9 = element("div");
+    			button = element("button");
     			create_component(fa.$$.fragment);
-    			t10 = space();
-    			if (if_block) if_block.c();
-    			if_block_anchor = empty();
-    			attr_dev(div0, "class", "air-deignator");
-    			add_location(div0, file$1, 14, 8, 425);
-    			attr_dev(div1, "class", "air-code");
-    			add_location(div1, file$1, 15, 8, 487);
-    			attr_dev(div2, "class", "d-flex align-items-center");
-    			add_location(div2, file$1, 13, 6, 377);
-    			attr_dev(div3, "class", "air-name");
-    			add_location(div3, file$1, 21, 11, 690);
-    			add_location(div4, file$1, 21, 6, 685);
-    			add_location(span, file$1, 24, 10, 875);
-    			attr_dev(div5, "class", "air-updated");
-    			set_style(div5, "margin-right", "0px");
-    			add_location(div5, file$1, 23, 8, 812);
-    			attr_dev(div6, "class", "ml-auto d-flex align-items-center");
-    			add_location(div6, file$1, 22, 6, 756);
-    			attr_dev(div7, "class", "d-flex flex-column flex-lg-row");
-    			add_location(div7, file$1, 12, 4, 326);
-    			attr_dev(div8, "class", "col-lg-11");
-    			add_location(div8, file$1, 11, 2, 298);
-    			attr_dev(div9, "class", "col-lg-1");
-    			attr_dev(div9, "aria-expanded", /*isOpen*/ ctx[2]);
-    			add_location(div9, file$1, 30, 2, 971);
-    			attr_dev(div10, "class", "airline-row svelte-1iyr5jk");
-    			add_location(div10, file$1, 10, 0, 270);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    			attr_dev(button, "class", "expand svelte-y4o47i");
+    			attr_dev(button, "aria-expanded", /*isOpen*/ ctx[2]);
+    			add_location(button, file$1, 35, 4, 1065);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div10, anchor);
-    			append_dev(div10, div8);
-    			append_dev(div8, div7);
-    			append_dev(div7, div2);
-    			append_dev(div2, div0);
-    			append_dev(div0, t0);
-    			append_dev(div2, t1);
-    			append_dev(div2, div1);
-    			append_dev(div1, t2);
-    			append_dev(div7, t3);
-    			append_dev(div7, div4);
-    			append_dev(div4, div3);
-    			append_dev(div3, t4);
-    			append_dev(div7, t5);
-    			append_dev(div7, div6);
-    			append_dev(div6, div5);
-    			append_dev(div5, span);
-    			append_dev(div5, t7);
-    			append_dev(div5, t8);
-    			append_dev(div10, t9);
-    			append_dev(div10, div9);
-    			mount_component(fa, div9, null);
-    			insert_dev(target, t10, anchor);
-    			if (if_block) if_block.m(target, anchor);
-    			insert_dev(target, if_block_anchor, anchor);
+    			insert_dev(target, button, anchor);
+    			mount_component(fa, button, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(div9, "click", /*toggle*/ ctx[3], false, false, false);
+    				dispose = listen_dev(button, "click", /*toggle*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*airline*/ 1) && t0_value !== (t0_value = /*airline*/ ctx[0].Designator + "")) set_data_dev(t0, t0_value);
-
-    			if ((!current || dirty & /*airline*/ 1) && t2_value !== (t2_value = (/*airline*/ ctx[0]["Numeric Code"].toString().length == 2
-    			? "0" + /*airline*/ ctx[0]["Numeric Code"]
-    			: /*airline*/ ctx[0]["Numeric Code"]) + "")) set_data_dev(t2, t2_value);
-
-    			if ((!current || dirty & /*airline*/ 1) && t4_value !== (t4_value = /*airline*/ ctx[0]["Airline Name"] + "")) set_data_dev(t4, t4_value);
-    			if (!current || dirty & /*date*/ 2) set_data_dev(t8, /*date*/ ctx[1]);
+    		p: function update(ctx, dirty) {
     			const fa_changes = {};
     			if (dirty & /*isOpen*/ 4) fa_changes.icon = /*isOpen*/ ctx[2] ? faMinus : faPlus;
     			fa.$set(fa_changes);
 
     			if (!current || dirty & /*isOpen*/ 4) {
-    				attr_dev(div9, "aria-expanded", /*isOpen*/ ctx[2]);
+    				attr_dev(button, "aria-expanded", /*isOpen*/ ctx[2]);
     			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(fa.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(fa.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			destroy_component(fa);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$1.name,
+    		type: "slot",
+    		source: "(35:2) <MDBCol size=\\\"1\\\" class=\\\"ml-auto\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (14:0) <MDBRow style="align-items: center; ">
+    function create_default_slot$1(ctx) {
+    	let mdbcol0;
+    	let t;
+    	let mdbcol1;
+    	let current;
+
+    	mdbcol0 = new Xt({
+    			props: {
+    				size: "11",
+    				$$slots: { default: [create_default_slot_2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	mdbcol1 = new Xt({
+    			props: {
+    				size: "1",
+    				class: "ml-auto",
+    				$$slots: { default: [create_default_slot_1$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(mdbcol0.$$.fragment);
+    			t = space();
+    			create_component(mdbcol1.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(mdbcol0, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(mdbcol1, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const mdbcol0_changes = {};
+
+    			if (dirty & /*$$scope, date, airline*/ 19) {
+    				mdbcol0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			mdbcol0.$set(mdbcol0_changes);
+    			const mdbcol1_changes = {};
+
+    			if (dirty & /*$$scope, isOpen*/ 20) {
+    				mdbcol1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			mdbcol1.$set(mdbcol1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(mdbcol0.$$.fragment, local);
+    			transition_in(mdbcol1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(mdbcol0.$$.fragment, local);
+    			transition_out(mdbcol1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(mdbcol0, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(mdbcol1, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$1.name,
+    		type: "slot",
+    		source: "(14:0) <MDBRow style=\\\"align-items: center; \\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (41:0) {#if isOpen}
+    function create_if_block(ctx) {
+    	let div;
+    	let div_transition;
+    	let current;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			div.textContent = "I'm open!";
+    			add_location(div, file$1, 41, 2, 1227);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!div_transition) div_transition = create_bidirectional_transition(div, slide, { duration: 300 }, true);
+    				div_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (!div_transition) div_transition = create_bidirectional_transition(div, slide, { duration: 300 }, false);
+    			div_transition.run(0);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching && div_transition) div_transition.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(41:0) {#if isOpen}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let mdbrow;
+    	let t;
+    	let if_block_anchor;
+    	let current;
+
+    	mdbrow = new Wt({
+    			props: {
+    				style: "align-items: center;\n",
+    				$$slots: { default: [create_default_slot$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	let if_block = /*isOpen*/ ctx[2] && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			create_component(mdbrow.$$.fragment);
+    			t = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(mdbrow, target, anchor);
+    			insert_dev(target, t, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const mdbrow_changes = {};
+
+    			if (dirty & /*$$scope, isOpen, date, airline*/ 23) {
+    				mdbrow_changes.$$scope = { dirty, ctx };
+    			}
+
+    			mdbrow.$set(mdbrow_changes);
 
     			if (/*isOpen*/ ctx[2]) {
     				if (if_block) {
-    					if_block.p(ctx, dirty);
-
     					if (dirty & /*isOpen*/ 4) {
     						transition_in(if_block, 1);
     					}
@@ -22173,23 +22240,20 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(fa.$$.fragment, local);
+    			transition_in(mdbrow.$$.fragment, local);
     			transition_in(if_block);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(fa.$$.fragment, local);
+    			transition_out(mdbrow.$$.fragment, local);
     			transition_out(if_block);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div10);
-    			destroy_component(fa);
-    			if (detaching) detach_dev(t10);
+    			destroy_component(mdbrow, detaching);
+    			if (detaching) detach_dev(t);
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
-    			mounted = false;
-    			dispose();
     		}
     	};
 
@@ -22236,6 +22300,8 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		slide,
     		Fa,
+    		MDBRow: Wt,
+    		MDBCol: Xt,
     		faMinus,
     		faPlus,
     		airline,
@@ -22290,6 +22356,7 @@ var app = (function () {
     /* src/App.svelte generated by Svelte v3.53.1 */
 
     const { console: console_1 } = globals;
+
     const file = "src/App.svelte";
 
     function get_each_context(ctx, list, i) {
@@ -22298,7 +22365,100 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (44:3) {#each airline as a}
+    // (37:4) <MDBCol size="8" class="offset-lg-2 center">
+    function create_default_slot_1(ctx) {
+    	let div;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			div.textContent = "Below are the details on the airlines currently participating in ARC\n        Direct Connect.";
+    			attr_dev(div, "class", "product-callout-copy");
+    			set_style(div, "font-size", "18px");
+    			set_style(div, "line-height", "24px");
+    			set_style(div, "margin-bottom", "30px");
+    			set_style(div, "color", "#868b8c");
+    			set_style(div, "text-align", "center");
+    			add_location(div, file, 37, 6, 1102);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1.name,
+    		type: "slot",
+    		source: "(37:4) <MDBCol size=\\\"8\\\" class=\\\"offset-lg-2 center\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (36:2) <MDBRow style="margin-right: 0;margin-left: 0;">
+    function create_default_slot(ctx) {
+    	let mdbcol;
+    	let current;
+
+    	mdbcol = new Xt({
+    			props: {
+    				size: "8",
+    				class: "offset-lg-2 center",
+    				$$slots: { default: [create_default_slot_1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(mdbcol.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(mdbcol, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const mdbcol_changes = {};
+
+    			if (dirty & /*$$scope*/ 32) {
+    				mdbcol_changes.$$scope = { dirty, ctx };
+    			}
+
+    			mdbcol.$set(mdbcol_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(mdbcol.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(mdbcol.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(mdbcol, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(36:2) <MDBRow style=\\\"margin-right: 0;margin-left: 0;\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (47:4) {#each airline as a}
     function create_each_block(ctx) {
     	let airline_1;
     	let current;
@@ -22343,7 +22503,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(44:3) {#each airline as a}",
+    		source: "(47:4) {#each airline as a}",
     		ctx
     	});
 
@@ -22351,14 +22511,20 @@ var app = (function () {
     }
 
     function create_fragment(ctx) {
-    	let div5;
-    	let div2;
-    	let div1;
-    	let div0;
-    	let t1;
-    	let div4;
-    	let div3;
+    	let mdbrow;
+    	let t;
+    	let each_1_anchor;
     	let current;
+
+    	mdbrow = new Wt({
+    			props: {
+    				style: "margin-right: 0;margin-left: 0;",
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
     	let each_value = /*airline*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -22373,53 +22539,38 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div5 = element("div");
-    			div2 = element("div");
-    			div1 = element("div");
-    			div0 = element("div");
-    			div0.textContent = "Below are the details on the airlines currently participating in ARC\n\t\t\tDirect Connect.";
-    			t1 = space();
-    			div4 = element("div");
-    			div3 = element("div");
+    			create_component(mdbrow.$$.fragment);
+    			t = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div0, "class", "product-callout-copy text-center");
-    			set_style(div0, "font-size", "18px");
-    			set_style(div0, "line-height", "24px");
-    			set_style(div0, "margin-bottom", "30px");
-    			add_location(div0, file, 32, 4, 979);
-    			attr_dev(div1, "class", "offset-lg-2 col-lg-8");
-    			add_location(div1, file, 31, 2, 940);
-    			attr_dev(div2, "class", "row");
-    			add_location(div2, file, 30, 1, 920);
-    			attr_dev(div3, "class", "col-lg-12");
-    			add_location(div3, file, 42, 4, 1247);
-    			attr_dev(div4, "class", "row");
-    			add_location(div4, file, 41, 3, 1225);
-    			add_location(div5, file, 29, 0, 913);
+    			each_1_anchor = empty();
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div5, anchor);
-    			append_dev(div5, div2);
-    			append_dev(div2, div1);
-    			append_dev(div1, div0);
-    			append_dev(div5, t1);
-    			append_dev(div5, div4);
-    			append_dev(div4, div3);
+    			mount_component(mdbrow, target, anchor);
+    			insert_dev(target, t, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div3, null);
+    				each_blocks[i].m(target, anchor);
     			}
 
+    			insert_dev(target, each_1_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
+    			const mdbrow_changes = {};
+
+    			if (dirty & /*$$scope*/ 32) {
+    				mdbrow_changes.$$scope = { dirty, ctx };
+    			}
+
+    			mdbrow.$set(mdbrow_changes);
+
     			if (dirty & /*airline, date*/ 3) {
     				each_value = /*airline*/ ctx[0];
     				validate_each_argument(each_value);
@@ -22435,7 +22586,7 @@ var app = (function () {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
-    						each_blocks[i].m(div3, null);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
     					}
     				}
 
@@ -22450,6 +22601,7 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
+    			transition_in(mdbrow.$$.fragment, local);
 
     			for (let i = 0; i < each_value.length; i += 1) {
     				transition_in(each_blocks[i]);
@@ -22458,6 +22610,7 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
+    			transition_out(mdbrow.$$.fragment, local);
     			each_blocks = each_blocks.filter(Boolean);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -22467,8 +22620,10 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div5);
+    			destroy_component(mdbrow, detaching);
+    			if (detaching) detach_dev(t);
     			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
 
@@ -22487,7 +22642,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
     	let airline = [];
-    	let date = '';
+    	let date = "";
 
     	onMount(async () => {
     		//   fetch the xlsx sheet
@@ -22517,6 +22672,8 @@ var app = (function () {
     		read: readSync,
     		utils,
     		onMount,
+    		MDBRow: Wt,
+    		MDBCol: Xt,
     		Airline,
     		airline,
     		date

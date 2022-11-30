@@ -1,0 +1,14 @@
+.airline-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .expand {
+    font-size: 25px;
+    cursor: pointer;
+    text-align: right;
+    margin-right: 5px;
+    background-color: #fff;
+    border: none;
+  }
