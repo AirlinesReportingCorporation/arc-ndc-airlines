@@ -4,6 +4,7 @@
   import { read, utils } from "xlsx";
   // Handles on mount through svelte
   import { onMount } from "svelte";
+  import Airline from "./Components/Airline.svelte";
 
   let airline = [];
   let date = '';
@@ -23,7 +24,6 @@
     // create objects from worksheet and update svelte state
     airline = utils.sheet_to_json(ws);
 	console.log(date)
-    
   });
 </script>
 
@@ -40,4 +40,5 @@
       </p>
     </div>
   {/each}
+  <Airline></Airline>
 </div>
