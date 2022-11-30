@@ -27,8 +27,24 @@
   });
 </script>
 
-<div class="ndc-airlines" style="display: inline-block;">
-  {#each airline as a}
-  <Airline airline={a} {date}/>
-  {/each}
+<div>
+	<div class="row">
+		<div class="offset-lg-2 col-lg-8">
+		  <div
+			class="product-callout-copy text-center"
+			style="font-size: 18px; line-height: 24px; margin-bottom: 30px"
+		  >
+			Below are the details on the airlines currently participating in ARC
+			Direct Connect.
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+		  <div class="col-lg-12">
+			{#each airline as a}
+			<Airline airline={a} {date}/>
+			{/each}
+		  </div>
+	  </div>
+ 
 </div>
