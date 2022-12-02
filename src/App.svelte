@@ -3,8 +3,6 @@
   import { read, utils } from "xlsx";
   // Handles on mount through svelte
   import { onMount } from "svelte";
-  //   bootstrap 4 for Svelte
-  import { MDBRow, MDBCol} from 'mdbsvelte';
 
 //   Components
   import Airline from "./Components/Airline.svelte";
@@ -33,17 +31,17 @@
   });
 </script>
 
-  <MDBRow style="margin-right: 0;margin-left: 0;">
-    <MDBCol size="8" class="offset-lg-2 center">
+  <div class="row align-items-center">
+    <div class="offset-lg-2 col-lg-8 ml-auto mr-auto">
       <div
-        class="product-callout-copy"
-        style="font-size: 18px; line-height: 24px; margin-bottom: 30px;color: #868b8c; text-align:center;"
+        class="product-callout-copy text-align-center"
+        style="font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;"
       >
         Below are the details on the airlines currently participating in ARC
         Direct Connect.
       </div>
-    </MDBCol>
-  </MDBRow>
+    </div>
+  </div>
     {#each airline as a}
       <Airline airline={a} {date} />
     {/each}

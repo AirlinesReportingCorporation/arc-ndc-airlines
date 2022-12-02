@@ -10,16 +10,16 @@
   const toggle = () => (isOpen = !isOpen);
 </script>
 
-<div class="airline-accordion">
-  <div class="accordion-top">
-    <div class="accordion-start">
-      <MDBRow
+<div class="airline-accordion product-accordion">
+  <div class="product-accordion-top">
+    <div class="product-accordion-start">
+      <div class="row align-items-center"
         center
-        style="align-items: center; margin-left: -1.125rem; margin-right: -1.125rem;"
+        style="margin-left: -1.125rem; margin-right: -1.125rem;"
       >
-        <MDBCol size="11">
+        <div class="col-11">
           <div class="d-flex flex-column flex-lg-row">
-            <div style="display:flex; align-items:center">
+            <div class="d-flex align-items-center">
               <div class="air-designator">{airline.Designator}</div>
               <div class="air-code">
                 {airline["Numeric Code"].toString().length == 2
@@ -30,18 +30,19 @@
             <div class="air-name">{airline["Airline Name"]}</div>
             <div class="ml-auto d-flex align-items-center">
               <div class="air-updated" style="margin-right: 0px;">
-                <span>Latest Updated:</span>
+                <span>Latest Updates:</span>
                 {date}
               </div>
             </div>
           </div>
-        </MDBCol>
-        <MDBCol size="1" style="max-width: 30px;">
-          <button class="expand" on:click={toggle} aria-expanded={isOpen}>
+        </div>
+        <div class="col-1">
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <div class="expand" on:click={toggle} aria-expanded={isOpen}>
             <Fa icon={isOpen ? faMinus : faPlus} />
-          </button>
-        </MDBCol>
-      </MDBRow>
+          </div>
+        </div>
+      </div>
       {#if isOpen}
         <div transition:slide={{ duration: 300 }}>I'm open!</div>
       {/if}
@@ -50,7 +51,7 @@
 </div>
 
 <style>
-  .accordion-top {
+  .product-accordion-top {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
     overflow: hidden;
   }
@@ -62,7 +63,7 @@
     overflow: hidden;
   }
 
-  .accordion-start {
+  .product-accordion-start {
     position: relative;
     padding: 0;
     z-index: 5;
@@ -80,6 +81,12 @@
     stroke: black;
     stroke-width: 25px;
   }
+
+  
+#ndc-app .product-accordion .col-1 {
+    flex: 0 0 5%;
+    max-width: 5%;
+}
 
   button:focus {
     outline: none;
