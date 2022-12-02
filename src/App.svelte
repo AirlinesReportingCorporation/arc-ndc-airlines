@@ -27,7 +27,7 @@
     const ws = wb.Sheets[wb.SheetNames[0]];
     // create objects from worksheet and update svelte state
     airline = utils.sheet_to_json(ws);
-    console.log(date);
+    console.log(airline);
   });
 </script>
 
@@ -45,4 +45,5 @@
     {#each airline as a}
       <Airline airline={a} {date} />
     {/each}
+    
 

@@ -61,3 +61,12 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+.ongreen {
+    background: #8cc088 !important;
+    border-color: #8cc088 !important;
+  }
+
+  .onred {
+    background: #d23e3e !important;
+    border: 2px solid #d23e3e !important;
+  }
