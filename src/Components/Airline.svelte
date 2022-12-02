@@ -10,10 +10,15 @@
   const toggle = () => (isOpen = !isOpen);
 </script>
 
-<div class="airline-accordion product-accordion">
+<div
+  class={isOpen
+    ? "active airline-accordion product-accordion-row"
+    : "airline-accordion product-accordion-row"}
+>
   <div class="product-accordion-top">
     <div class="product-accordion-start">
-      <div class="row align-items-center"
+      <div
+        class="row align-items-center"
         center
         style="margin-left: -1.125rem; margin-right: -1.125rem;"
       >
@@ -38,7 +43,11 @@
         </div>
         <div class="col-1">
           <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <div class="expand" on:click={toggle} aria-expanded={isOpen}>
+          <div
+            class={isOpen ? "active open expand" : "closed expand"}
+            on:click={toggle}
+            aria-expanded={isOpen}
+          >
             <Fa icon={isOpen ? faMinus : faPlus} />
           </div>
         </div>
@@ -51,13 +60,25 @@
 </div>
 
 <style>
+  .active {
+    background: #212122;
+    color: #fff;
+  }
+
+  .open {
+    stroke: white;
+  }
+
+  .closed {
+    background: #f1f2f2;
+    color: #212122;
+    stroke: black;
+  }
   .product-accordion-top {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
     overflow: hidden;
   }
   .airline-accordion {
-    background: #f1f2f2;
-    color: #212122;
     margin: 0 0 20px;
     border-radius: 10px;
     overflow: hidden;
@@ -76,21 +97,14 @@
     cursor: pointer;
     text-align: right;
     margin-right: 5px;
-    background: #f1f2f2;
     border: none;
-    stroke: black;
     stroke-width: 25px;
   }
 
-  
-#ndc-app .product-accordion .col-1 {
+  #ndc-app .product-accordion-row .col-1 {
     flex: 0 0 5%;
     max-width: 5%;
-}
-
-  button:focus {
-    outline: none;
-}
+  }
 
   .air-designator {
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
