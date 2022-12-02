@@ -26,7 +26,7 @@
     // get the first worksheet
     const ws = wb.Sheets[wb.SheetNames[0]];
     // create objects from worksheet and update svelte state
-    airline = utils.sheet_to_json(ws);
+    airline = utils.sheet_to_json(ws).sort((a, b) => a["Airline Name"].localeCompare(b["Airline Name"]));
     console.log(airline);
   });
 </script>

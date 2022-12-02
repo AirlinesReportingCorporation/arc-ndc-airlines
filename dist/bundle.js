@@ -23183,11 +23183,11 @@ var app = (function () {
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "product-callout-copy text-align-center");
     			attr_dev(div0, "style", "font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;");
-    			add_location(div0, file, 35, 6, 1024);
+    			add_location(div0, file, 35, 6, 1091);
     			attr_dev(div1, "class", "offset-lg-2 col-lg-8 ml-auto mr-auto");
-    			add_location(div1, file, 34, 4, 967);
+    			add_location(div1, file, 34, 4, 1034);
     			attr_dev(div2, "class", "row align-items-center");
-    			add_location(div2, file, 33, 2, 926);
+    			add_location(div2, file, 33, 2, 993);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -23290,7 +23290,7 @@ var app = (function () {
     		const ws = wb.Sheets[wb.SheetNames[0]];
 
     		// create objects from worksheet and update svelte state
-    		$$invalidate(0, airline = utils.sheet_to_json(ws));
+    		$$invalidate(0, airline = utils.sheet_to_json(ws).sort((a, b) => a["Airline Name"].localeCompare(b["Airline Name"])));
 
     		console.log(airline);
     	});
