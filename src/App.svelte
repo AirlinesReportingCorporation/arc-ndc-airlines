@@ -32,7 +32,7 @@
 </script>
 
   <div class="row align-items-center">
-    <div class="offset-lg-2 col-lg-8 ml-auto mr-auto">
+    <div class="offset-lg-2 col-lg-8 ml-auto mr-auto" style="text-align: center;">
       <div
         class="product-callout-copy text-align-center"
         style="font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;"

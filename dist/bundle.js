@@ -23183,8 +23183,9 @@ var app = (function () {
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "product-callout-copy text-align-center");
     			attr_dev(div0, "style", "font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;");
-    			add_location(div0, file, 35, 6, 1091);
+    			add_location(div0, file, 35, 6, 1119);
     			attr_dev(div1, "class", "offset-lg-2 col-lg-8 ml-auto mr-auto");
+    			set_style(div1, "text-align", "center");
     			add_location(div1, file, 34, 4, 1034);
     			attr_dev(div2, "class", "row align-items-center");
     			add_location(div2, file, 33, 2, 993);
