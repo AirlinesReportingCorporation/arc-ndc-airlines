@@ -14,14 +14,12 @@
   //   Sales File Type
   let sfType = ["SPRF", "RET"];
   //   IAR Error Management
-  let error = ["Corrected By Agent", "Return to Airline"];
+  let error = ["Corrected by Agent", "Return to Airline"];
   //   IAR Modifications
   let modifications = ["All", "None", "Commission Only"];
 //   Payment via ARC array
   let arcPayment = airline["Payment via ARC"].split(', ');
   let payments = ["Cash", "Credit"];
-
-  console.log(airline["IAR Manual Entries"])
 
 </script>
 
@@ -82,7 +80,9 @@
             this is usually the carrier code + the check digit."
             bottomClass="apProcessing m-auto"
             title="System Provider (SASI)"
-            buttons={[{ item: airline["System Provider"], itemClass: "" }]}
+            buttons={[
+              { item: airline["System Provider"].toString().length < 4 ? "0" + airline["System Provider"].toString() : airline["System Provider"] },
+            ]}
             bottomStyle="max-width: 80px; width: auto; margin-top: 14px !important;"
           />
           <!-- Sales File Type -->
@@ -119,14 +119,14 @@
               {
                 item: error[0],
                 itemClass:
-                  error[0] == airline["IAR Error Management"]
+                  error[0].indexOf(airline["IAR Error Management"]) > -1
                     ? "on apButton"
                     : "apButton",
               },
               {
                 item: error[1],
                 itemClass:
-                  error[1] == airline["IAR Error Management"]
+                  error[1] === airline["IAR Error Management"]
                     ? "on apButton"
                     : "apButton",
               },
@@ -219,7 +219,8 @@
        this is usually the carrier code + the check digit."
             bottomClass="d-flex justify-content-center"
             title="Payment via ARC"
-            buttons={[{
+            buttons={[
+              {
                 item: payments[0],
                 itemClass: payments.includes(arcPayment[0])
                   ? "ongreen apButton"
@@ -230,7 +231,8 @@
                 itemClass: payments.includes(arcPayment[1])
                   ? "ongreen apButton"
                   : "apButton",
-              },]}
+              },
+            ]}
             bottomStyle=""
           />
           <!-- Exch & Rfnd Verification -->
@@ -267,21 +269,21 @@
               {
                 item: "All",
                 itemClass:
-                "All" == airline["IAR Manual Entries"]
+                  "All" == airline["IAR Manual Entries"]
                     ? "on apButton"
                     : "apButton",
               },
               {
                 item: "None",
                 itemClass:
-                "None" == airline["IAR Manual Entries"]
+                  "None" == airline["IAR Manual Entries"]
                     ? "on apButton"
                     : "apButton",
               },
               {
                 item: "Void",
                 itemClass:
-                "Void" == airline["IAR Manual Entries"]
+                  "Void" == airline["IAR Manual Entries"]
                     ? "on apButton"
                     : "apButton",
               },
@@ -378,5 +380,4 @@
   .air-updated span {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
   }
- 
 </style>
