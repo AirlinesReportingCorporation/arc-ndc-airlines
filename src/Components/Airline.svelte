@@ -88,7 +88,7 @@
           <!-- Sales File Type -->
           <Card
             col="3"
-            tooltip="RET is the standard IATA file format; SPRF is the standard ARC file format."
+            tooltip="SPRF is the standard ARC file format; RET is the standard IATA file format."
             bottomClass="d-flex justify-content-center"
             title="Sales File Type"
             buttons={[
@@ -145,7 +145,7 @@
             col="6"
             tooltip="The transaction types an airline chooses to transmit to ARC’s Direct Connect Program."
             bottomClass="d-flex justify-content-center"
-            title="System Provider (SASI)"
+            title="Transaction Types via ARC"
             buttons={[
               {
                 item: types[0],
@@ -214,9 +214,9 @@
           <!-- Payment via ARC -->
           <Card
             col="3"
-            tooltip="Four-digit code identifying the airline reservation system that
-       generated the transaction. For ARC’s Direct Connect transactions,
-       this is usually the carrier code + the check digit."
+            tooltip="Forms of payment transmitted to ARC by the
+            carrier for reporting through ARC’s Direct
+            Connect Program."
             bottomClass="d-flex justify-content-center"
             title="Payment via ARC"
             buttons={[
@@ -238,7 +238,7 @@
           <!-- Exch & Rfnd Verification -->
           <Card
             col="3"
-            tooltip="RET is the standard IATA file format; SPRF is the standard ARC file format."
+            tooltip="Indicates whether ARC will validate numerous data elements from the original sale."
             bottomClass="d-flex justify-content-center"
             title="Exch & Rfnd Verification"
             buttons={[
@@ -262,7 +262,7 @@
           <!-- IAR Manual Entries -->
           <Card
             col="6"
-            tooltip="How the airline chooses to manage transactions that trigger an IAR business edit."
+            tooltip="Which Direct Connect Program transactions the airline allows an agency to add in IAR."
             bottomClass="d-flex justify-content-center"
             title="IAR Manual Entries"
             buttons={[
