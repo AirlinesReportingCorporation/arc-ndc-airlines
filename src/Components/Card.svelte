@@ -11,7 +11,7 @@
   <div class="apSection apSectionMarginLeft product-accordion-pb">
     <div class="apSectionTop">
       <div class="d-flex align-items-center">
-        <h3>{title}</h3>
+        <h3 style="margin-right: 15px;">{title}</h3>
         <div class="ml-auto">
           <div class="airlineTooltip">
             <img

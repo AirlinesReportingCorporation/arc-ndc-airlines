@@ -350,7 +350,7 @@
     color: #fff;
     text-align: center;
     border-radius: 8px;
-    margin-right: 15px;
+    margin-right: 20px;
   }
 
   .air-code {
