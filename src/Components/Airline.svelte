@@ -23,7 +23,7 @@
   let arcPayment = airline["Payment via ARC"].split(", ");
   let payments = ["Cash", "Credit"];
 </script>
-
+ 
 <a id={airline["Airline Name"].replace(" ", "")} class="accordion container" href={ "#" + airline["Airline Name"].replace(" ", "") + "?utm_source=ndc_airline"} on:click={toggle}>
   <div
     class={isOpen
