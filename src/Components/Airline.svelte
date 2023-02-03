@@ -22,7 +22,7 @@
   let payments = ["Cash", "Credit"];
 </script>
 
-<a class="accordion container" href={ isOpen ? "" : "#taca?utm_source=ndc_airline"} data-sveltekit-reload="off" on:click={toggle}>
+<a class="accordion container" href={ isOpen ? "" : "#taca?utm_source=ndc_airline"} on:click|preventDefault={toggle}>
   <div
     class={isOpen
       ? "active airline-accordion product-accordion-row"
