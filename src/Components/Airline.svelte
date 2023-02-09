@@ -59,10 +59,9 @@
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div
               class={isOpen ? "active open expand" : "closed expand"}
-              on:click={toggle}
               aria-expanded={isOpen}
             >
-              <Fa icon={isOpen ? faMinus : faPlus} />
+              <Fa on:click={toggle} icon={isOpen ? faMinus : faPlus}/>
             </div>
           </div>
         </div>
