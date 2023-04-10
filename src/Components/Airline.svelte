@@ -54,8 +54,7 @@
                 <div class="air-code">
                   {airline["Numeric Code"].toString().length == 2
                     ? "0" + airline["Numeric Code"]
-                    : airline["Numeric Code"]}
-                  {airline["Numeric Code"].toString().length == 1
+                    : airline["Numeric Code"].toString().length == 1
                     ? "00" + airline["Numeric Code"]
                     : airline["Numeric Code"]}
                 </div>
