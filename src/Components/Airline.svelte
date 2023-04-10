@@ -23,7 +23,18 @@
   let arcPayment = airline["Payment via ARC"].split(", ");
   let payments = ["Cash", "Credit"];
 </script>
-<a class="accordion container" href={isOpen ? ("#"+ airline["Airline Name"].replace(" ", "")+"open?utm_source=ndc_airline") : ("#" + airline["Airline Name"].replace(" ", "")+ "closed?utm_source=ndc_airline")} on:click={toggle}>
+
+<a
+  class="accordion container"
+  href={isOpen
+    ? "#" +
+      airline["Airline Name"].replace(" ", "") +
+      "open?utm_source=ndc_airline"
+    : "#" +
+      airline["Airline Name"].replace(" ", "") +
+      "closed?utm_source=ndc_airline"}
+  on:click={toggle}
+>
   <div
     class={isOpen
       ? "active airline-accordion product-accordion-row"
@@ -44,6 +55,9 @@
                   {airline["Numeric Code"].toString().length == 2
                     ? "0" + airline["Numeric Code"]
                     : airline["Numeric Code"]}
+                  {airline["Numeric Code"].toString().length == 1
+                    ? "00" + airline["Numeric Code"]
+                    : airline["Numeric Code"]}
                 </div>
               </div>
               <div class="air-name">{airline["Airline Name"]}</div>
@@ -61,7 +75,7 @@
               class={isOpen ? "active open expand" : "closed expand"}
               aria-expanded={isOpen}
             >
-              <Fa on:click={toggle} icon={isOpen ? faMinus : faPlus}/>
+              <Fa on:click={toggle} icon={isOpen ? faMinus : faPlus} />
             </div>
           </div>
         </div>
@@ -318,14 +332,14 @@
     stroke: black;
   }
 
-  .accordion.container{
+  .accordion.container {
     cursor: pointer;
   }
 
-  .product-accordion-top:hover, .closed:hover{
+  .product-accordion-top:hover,
+  .closed:hover {
     background: #dddddd;
   }
-
 
   .product-accordion-top {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
