@@ -22,6 +22,14 @@
   //   Payment via ARC array
   let arcPayment = airline["Payment via ARC"].split(", ");
   let payments = ["Cash", "Credit"];
+
+  let airName = airline["Airline Name"];
+  let airName2 = "" 
+
+  if(airName.indexOf(" via ") > -1){
+    airName = airline["Airline Name"].split(" via ")[0];
+    airName2 = airline["Airline Name"].split(" via ")[1];
+  }
 </script>
 
 <a
@@ -59,7 +67,13 @@
                     : airline["Numeric Code"]}
                 </div>
               </div>
-              <div class="air-name">{airline["Airline Name"]}</div>
+              <div class="air-name">
+                {airName}
+
+                {#if airName2.length > 0}
+                  <div class="air-name-sub">via {airName2}</div>
+                {/if}
+              </div>
               <div class="ml-auto d-flex align-items-center">
                 <div class="air-updated" style="margin-right: 0px;">
                   <span>Latest Updates:</span>
@@ -396,6 +410,12 @@
   .air-name {
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
     font-size: 30px;
+  }
+
+  .air-name-sub {
+    font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #888888;
   }
 
   .air-updated {
