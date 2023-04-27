@@ -391,6 +391,10 @@
     max-width: 5%;
   }
 
+  #ndc-app .product-accordion-row {
+    margin-bottom: 0 !important;
+  }
+
   .air-designator {
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
     background: #1d9cb1;
@@ -400,6 +404,10 @@
     text-align: center;
     border-radius: 8px;
     margin-right: 20px;
+  }
+
+  #ndc-app .product-accordion-row {
+    margin-bottom: 0 !important;
   }
 
   .air-code {

@@ -41,7 +41,10 @@
         next = airline[i + 1];
         if (current["Numeric Code"] === next["Numeric Code"]) {
           airlineCombined.push([current, next]);
-        } else if (i > 0 && airline[i - 1]["Numeric Code"] !== current["Numeric Code"]) {
+        } else if (
+          i > 0 &&
+          airline[i - 1]["Numeric Code"] !== current["Numeric Code"]
+        ) {
           airlineCombined.push([current]);
         }
       } else {

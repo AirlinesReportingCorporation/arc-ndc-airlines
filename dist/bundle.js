@@ -22338,9 +22338,9 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "via Airline Direct";
-    			attr_dev(div0, "class", "via-tag svelte-7p1cdi");
+    			attr_dev(div0, "class", "via-tag svelte-gu3lyy");
     			add_location(div0, file$1, 97, 16, 3283);
-    			attr_dev(div1, "class", "via-container svelte-7p1cdi");
+    			attr_dev(div1, "class", "via-container svelte-gu3lyy");
     			add_location(div1, file$1, 96, 14, 3239);
     		},
     		m: function mount(target, anchor) {
@@ -22373,9 +22373,9 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "via Accelya";
-    			attr_dev(div0, "class", "via-tag accelya svelte-7p1cdi");
+    			attr_dev(div0, "class", "via-tag accelya svelte-gu3lyy");
     			add_location(div0, file$1, 93, 16, 3137);
-    			attr_dev(div1, "class", "via-container svelte-7p1cdi");
+    			attr_dev(div1, "class", "via-container svelte-gu3lyy");
     			add_location(div1, file$1, 92, 14, 3093);
     		},
     		m: function mount(target, anchor) {
@@ -22995,15 +22995,15 @@ var app = (function () {
     			create_component(fa.$$.fragment);
     			t7 = space();
     			if (if_block) if_block.c();
-    			attr_dev(div0, "class", "air-designator svelte-7p1cdi");
+    			attr_dev(div0, "class", "air-designator svelte-gu3lyy");
     			add_location(div0, file$1, 60, 16, 1858);
-    			attr_dev(div1, "class", "air-code svelte-7p1cdi");
+    			attr_dev(div1, "class", "air-code svelte-gu3lyy");
     			add_location(div1, file$1, 61, 16, 1932);
     			attr_dev(div2, "class", "d-flex align-items-center");
     			add_location(div2, file$1, 59, 14, 1802);
-    			attr_dev(div3, "class", "air-name svelte-7p1cdi");
+    			attr_dev(div3, "class", "air-name svelte-gu3lyy");
     			add_location(div3, file$1, 69, 14, 2315);
-    			attr_dev(div4, "class", "air-updated svelte-7p1cdi");
+    			attr_dev(div4, "class", "air-updated svelte-gu3lyy");
     			set_style(div4, "margin-right", "0px");
     			add_location(div4, file$1, 73, 16, 2463);
     			attr_dev(div5, "class", "ml-auto d-flex align-items-center");
@@ -23015,28 +23015,28 @@ var app = (function () {
 
     			attr_dev(div8, "class", div8_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open expand"
-    			: "closed expand") + " svelte-7p1cdi"));
+    			: "closed expand") + " svelte-gu3lyy"));
 
     			attr_dev(div8, "aria-expanded", /*isOpen*/ ctx[1]);
     			add_location(div8, file$1, 79, 12, 2686);
-    			attr_dev(div9, "class", "col-1 svelte-7p1cdi");
+    			attr_dev(div9, "class", "col-1 svelte-gu3lyy");
     			add_location(div9, file$1, 77, 10, 2585);
     			attr_dev(div10, "class", "row align-items-center");
     			attr_dev(div10, "center", "");
     			set_style(div10, "margin-left", "-1.125rem");
     			set_style(div10, "margin-right", "-1.125rem");
     			add_location(div10, file$1, 52, 8, 1560);
-    			attr_dev(div11, "class", "product-accordion-start svelte-7p1cdi");
+    			attr_dev(div11, "class", "product-accordion-start svelte-gu3lyy");
     			add_location(div11, file$1, 51, 6, 1514);
-    			attr_dev(div12, "class", "product-accordion-top svelte-7p1cdi");
+    			attr_dev(div12, "class", "product-accordion-top svelte-gu3lyy");
     			add_location(div12, file$1, 50, 4, 1472);
 
     			attr_dev(div13, "class", div13_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
-    			: "airline-accordion product-accordion-row") + " svelte-7p1cdi"));
+    			: "airline-accordion product-accordion-row") + " svelte-gu3lyy"));
 
     			add_location(div13, file$1, 45, 2, 1333);
-    			attr_dev(a, "class", "accordion container svelte-7p1cdi");
+    			attr_dev(a, "class", "accordion container svelte-gu3lyy");
 
     			attr_dev(a, "href", a_href_value = /*isOpen*/ ctx[1]
     			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "open?utm_source=ndc_airline"
@@ -23096,7 +23096,7 @@ var app = (function () {
 
     			if (!current || dirty & /*isOpen*/ 2 && div8_class_value !== (div8_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open expand"
-    			: "closed expand") + " svelte-7p1cdi"))) {
+    			: "closed expand") + " svelte-gu3lyy"))) {
     				attr_dev(div8, "class", div8_class_value);
     			}
 
@@ -23129,7 +23129,7 @@ var app = (function () {
 
     			if (!current || dirty & /*isOpen*/ 2 && div13_class_value !== (div13_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
-    			: "airline-accordion product-accordion-row") + " svelte-7p1cdi"))) {
+    			: "airline-accordion product-accordion-row") + " svelte-gu3lyy"))) {
     				attr_dev(div13, "class", div13_class_value);
     			}
 
@@ -23326,7 +23326,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (67:0) {#each airlineCombined as a}
+    // (70:0) {#each airlineCombined as a}
     function create_each_block(ctx) {
     	let airline_1;
     	let current;
@@ -23370,7 +23370,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(67:0) {#each airlineCombined as a}",
+    		source: "(70:0) {#each airlineCombined as a}",
     		ctx
     	});
 
@@ -23411,12 +23411,12 @@ var app = (function () {
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "product-callout-copy text-align-center");
     			attr_dev(div0, "style", "font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;");
-    			add_location(div0, file, 57, 4, 1712);
+    			add_location(div0, file, 60, 4, 1742);
     			attr_dev(div1, "class", "offset-lg-2 col-lg-8 ml-auto mr-auto");
     			set_style(div1, "text-align", "center");
-    			add_location(div1, file, 56, 2, 1629);
+    			add_location(div1, file, 59, 2, 1659);
     			attr_dev(div2, "class", "row align-items-center");
-    			add_location(div2, file, 55, 0, 1590);
+    			add_location(div2, file, 58, 0, 1620);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
