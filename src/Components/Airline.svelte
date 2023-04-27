@@ -25,6 +25,8 @@
   let airName = airline[0]["Airline Name"];
   let airName2 = "";
 
+  let airURL = airline[0]["URL"];
+
   if (airName.indexOf(" via ") > -1) {
     airName = airline[0]["Airline Name"].split(" via ")[0];
     airName2 = airline[0]["Airline Name"].split(" via ")[1];
@@ -70,7 +72,12 @@
                 {airName}
               </div>
               <div class="ml-auto d-flex align-items-center">
-                <div class="air-updated" style="margin-right: 0px;" />
+                <a
+                  href={airURL}
+                  target="_blank"
+                  class="apProfile d-flex align-items-center"
+                  >Airline Profile&nbsp;<i class="fas fa-chevron-right" /></a
+                >
               </div>
             </div>
           </div>
@@ -83,7 +90,7 @@
               {#if isOpen}
                 <div class=" ap-close" />
               {:else}
-                <div  class=" ap-open" />
+                <div class=" ap-open" />
               {/if}
             </div>
           </div>
@@ -354,6 +361,18 @@
     stroke: black;
   }
 
+  .apProfile {
+    color: #129bb2;
+    font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .apProfile i {
+    font-size: 11px;
+    margin-left: 3px;
+}
   .accordion.container {
     cursor: pointer;
   }

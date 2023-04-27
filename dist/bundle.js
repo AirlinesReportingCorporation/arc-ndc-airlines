@@ -22217,19 +22217,19 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
+    	child_ctx[14] = list[i];
     	return child_ctx;
     }
 
-    // (85:14) {:else}
+    // (92:14) {:else}
     function create_else_block_1(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "ap-open svelte-bq1zor");
-    			add_location(div, file$1, 85, 16, 2852);
+    			attr_dev(div, "class", "ap-open svelte-izl4qo");
+    			add_location(div, file$1, 92, 16, 3059);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22243,22 +22243,22 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(85:14) {:else}",
+    		source: "(92:14) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:14) {#if isOpen}
+    // (90:14) {#if isOpen}
     function create_if_block_2(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "ap-close svelte-bq1zor");
-    			add_location(div, file$1, 83, 16, 2788);
+    			attr_dev(div, "class", "ap-close svelte-izl4qo");
+    			add_location(div, file$1, 90, 16, 2995);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22272,14 +22272,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(83:14) {#if isOpen}",
+    		source: "(90:14) {#if isOpen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:8) {#if isOpen}
+    // (98:8) {#if isOpen}
     function create_if_block(ctx) {
     	let each_1_anchor;
     	let current;
@@ -22368,14 +22368,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(91:8) {#if isOpen}",
+    		source: "(98:8) {#if isOpen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:12) {:else}
+    // (106:12) {:else}
     function create_else_block(ctx) {
     	let div1;
     	let div0;
@@ -22385,10 +22385,10 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "via Airline Direct";
-    			attr_dev(div0, "class", "via-tag svelte-bq1zor");
-    			add_location(div0, file$1, 100, 16, 3297);
-    			attr_dev(div1, "class", "via-container svelte-bq1zor");
-    			add_location(div1, file$1, 99, 14, 3253);
+    			attr_dev(div0, "class", "via-tag svelte-izl4qo");
+    			add_location(div0, file$1, 107, 16, 3503);
+    			attr_dev(div1, "class", "via-container svelte-izl4qo");
+    			add_location(div1, file$1, 106, 14, 3459);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -22403,14 +22403,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(99:12) {:else}",
+    		source: "(106:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:12) {#if a["Airline Name"].indexOf("Accelya") > -1}
+    // (102:12) {#if a["Airline Name"].indexOf("Accelya") > -1}
     function create_if_block_1(ctx) {
     	let div1;
     	let div0;
@@ -22420,10 +22420,10 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "via Accelya";
-    			attr_dev(div0, "class", "via-tag accelya svelte-bq1zor");
-    			add_location(div0, file$1, 96, 16, 3151);
-    			attr_dev(div1, "class", "via-container svelte-bq1zor");
-    			add_location(div1, file$1, 95, 14, 3107);
+    			attr_dev(div0, "class", "via-tag accelya svelte-izl4qo");
+    			add_location(div0, file$1, 103, 16, 3357);
+    			attr_dev(div1, "class", "via-container svelte-izl4qo");
+    			add_location(div1, file$1, 102, 14, 3313);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -22438,14 +22438,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(95:12) {#if a[\\\"Airline Name\\\"].indexOf(\\\"Accelya\\\") > -1}",
+    		source: "(102:12) {#if a[\\\"Airline Name\\\"].indexOf(\\\"Accelya\\\") > -1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:10) {#each airline as a}
+    // (99:10) {#each airline as a}
     function create_each_block$1(ctx) {
     	let show_if;
     	let t0;
@@ -22475,7 +22475,7 @@ var app = (function () {
 
     	function select_block_type_1(ctx, dirty) {
     		if (dirty & /*airline*/ 1) show_if = null;
-    		if (show_if == null) show_if = !!(/*a*/ ctx[13]["Airline Name"].indexOf("Accelya") > -1);
+    		if (show_if == null) show_if = !!(/*a*/ ctx[14]["Airline Name"].indexOf("Accelya") > -1);
     		if (show_if) return create_if_block_1;
     		return create_else_block;
     	}
@@ -22491,9 +22491,9 @@ var app = (function () {
     				title: "System Provider (SASI)",
     				buttons: [
     					{
-    						item: /*a*/ ctx[13]["System Provider"].toString().length < 4
-    						? "0" + /*a*/ ctx[13]["System Provider"].toString()
-    						: /*a*/ ctx[13]["System Provider"]
+    						item: /*a*/ ctx[14]["System Provider"].toString().length < 4
+    						? "0" + /*a*/ ctx[14]["System Provider"].toString()
+    						: /*a*/ ctx[14]["System Provider"]
     					}
     				],
     				bottomStyle: "max-width: 80px; width: auto; margin-top: 14px !important;"
@@ -22510,13 +22510,13 @@ var app = (function () {
     				buttons: [
     					{
     						item: /*sfType*/ ctx[6][0],
-    						itemClass: /*sfType*/ ctx[6][0] == /*a*/ ctx[13]["Sales File Type"]
+    						itemClass: /*sfType*/ ctx[6][0] == /*a*/ ctx[14]["Sales File Type"]
     						? "on apButton"
     						: "apButton"
     					},
     					{
     						item: /*sfType*/ ctx[6][1],
-    						itemClass: /*sfType*/ ctx[6][1] == /*a*/ ctx[13]["Sales File Type"]
+    						itemClass: /*sfType*/ ctx[6][1] == /*a*/ ctx[14]["Sales File Type"]
     						? "on apButton"
     						: "apButton"
     					}
@@ -22535,13 +22535,13 @@ var app = (function () {
     				buttons: [
     					{
     						item: /*error*/ ctx[7][0],
-    						itemClass: /*error*/ ctx[7][0].indexOf(/*a*/ ctx[13]["IAR Error Management"]) > -1
+    						itemClass: /*error*/ ctx[7][0].indexOf(/*a*/ ctx[14]["IAR Error Management"]) > -1
     						? "on apButton"
     						: "apButton"
     					},
     					{
     						item: /*error*/ ctx[7][1],
-    						itemClass: /*error*/ ctx[7][1] === /*a*/ ctx[13]["IAR Error Management"]
+    						itemClass: /*error*/ ctx[7][1] === /*a*/ ctx[14]["IAR Error Management"]
     						? "on apButton"
     						: "apButton"
     					}
@@ -22597,19 +22597,19 @@ var app = (function () {
     				buttons: [
     					{
     						item: /*modifications*/ ctx[8][0],
-    						itemClass: /*modifications*/ ctx[8][0] == /*a*/ ctx[13]["IAR Modifications"]
+    						itemClass: /*modifications*/ ctx[8][0] == /*a*/ ctx[14]["IAR Modifications"]
     						? "on apButton"
     						: "apButton"
     					},
     					{
     						item: /*modifications*/ ctx[8][1],
-    						itemClass: /*modifications*/ ctx[8][1] == /*a*/ ctx[13]["IAR Modifications"]
+    						itemClass: /*modifications*/ ctx[8][1] == /*a*/ ctx[14]["IAR Modifications"]
     						? "on apButton"
     						: "apButton"
     					},
     					{
     						item: /*modifications*/ ctx[8][2],
-    						itemClass: /*modifications*/ ctx[8][2] == /*a*/ ctx[13]["IAR Modifications"]
+    						itemClass: /*modifications*/ ctx[8][2] == /*a*/ ctx[14]["IAR Modifications"]
     						? "on apButton"
     						: "apButton"
     					}
@@ -22653,13 +22653,13 @@ var app = (function () {
     				buttons: [
     					{
     						item: "Yes",
-    						itemClass: "Yes" == /*a*/ ctx[13]["Exchange & Refund Verification"]
+    						itemClass: "Yes" == /*a*/ ctx[14]["Exchange & Refund Verification"]
     						? "ongreen apButton"
     						: "apButton"
     					},
     					{
     						item: "No",
-    						itemClass: "No" == /*a*/ ctx[13]["Exchange & Refund Verification"]
+    						itemClass: "No" == /*a*/ ctx[14]["Exchange & Refund Verification"]
     						? "onred apButton"
     						: "apButton"
     					}
@@ -22678,19 +22678,19 @@ var app = (function () {
     				buttons: [
     					{
     						item: "All",
-    						itemClass: "All" == /*a*/ ctx[13]["IAR Manual Entries"]
+    						itemClass: "All" == /*a*/ ctx[14]["IAR Manual Entries"]
     						? "on apButton"
     						: "apButton"
     					},
     					{
     						item: "None",
-    						itemClass: "None" == /*a*/ ctx[13]["IAR Manual Entries"]
+    						itemClass: "None" == /*a*/ ctx[14]["IAR Manual Entries"]
     						? "on apButton"
     						: "apButton"
     					},
     					{
     						item: "Void",
-    						itemClass: "Void" == /*a*/ ctx[13]["IAR Manual Entries"]
+    						itemClass: "Void" == /*a*/ ctx[14]["IAR Manual Entries"]
     						? "on apButton"
     						: "apButton"
     					}
@@ -22726,15 +22726,15 @@ var app = (function () {
     			attr_dev(div0, "class", "row no-gutters");
     			set_style(div0, "padding-top", "35px");
     			set_style(div0, "margin-left", "-20px");
-    			add_location(div0, file$1, 103, 12, 3394);
+    			add_location(div0, file$1, 110, 12, 3600);
     			attr_dev(div1, "class", "row no-gutters");
     			set_style(div1, "padding-top", "35px");
     			set_style(div1, "margin-left", "-20px");
-    			add_location(div1, file$1, 177, 12, 6183);
+    			add_location(div1, file$1, 184, 12, 6389);
     			attr_dev(div2, "class", "row no-gutters");
     			set_style(div2, "padding-top", "35px");
     			set_style(div2, "margin-left", "-20px");
-    			add_location(div2, file$1, 248, 12, 8940);
+    			add_location(div2, file$1, 255, 12, 9146);
     		},
     		m: function mount(target, anchor) {
     			if_block.m(target, anchor);
@@ -22775,9 +22775,9 @@ var app = (function () {
 
     			if (dirty & /*airline*/ 1) card0_changes.buttons = [
     				{
-    					item: /*a*/ ctx[13]["System Provider"].toString().length < 4
-    					? "0" + /*a*/ ctx[13]["System Provider"].toString()
-    					: /*a*/ ctx[13]["System Provider"]
+    					item: /*a*/ ctx[14]["System Provider"].toString().length < 4
+    					? "0" + /*a*/ ctx[14]["System Provider"].toString()
+    					: /*a*/ ctx[14]["System Provider"]
     				}
     			];
 
@@ -22787,13 +22787,13 @@ var app = (function () {
     			if (dirty & /*airline*/ 1) card1_changes.buttons = [
     				{
     					item: /*sfType*/ ctx[6][0],
-    					itemClass: /*sfType*/ ctx[6][0] == /*a*/ ctx[13]["Sales File Type"]
+    					itemClass: /*sfType*/ ctx[6][0] == /*a*/ ctx[14]["Sales File Type"]
     					? "on apButton"
     					: "apButton"
     				},
     				{
     					item: /*sfType*/ ctx[6][1],
-    					itemClass: /*sfType*/ ctx[6][1] == /*a*/ ctx[13]["Sales File Type"]
+    					itemClass: /*sfType*/ ctx[6][1] == /*a*/ ctx[14]["Sales File Type"]
     					? "on apButton"
     					: "apButton"
     				}
@@ -22805,13 +22805,13 @@ var app = (function () {
     			if (dirty & /*airline*/ 1) card2_changes.buttons = [
     				{
     					item: /*error*/ ctx[7][0],
-    					itemClass: /*error*/ ctx[7][0].indexOf(/*a*/ ctx[13]["IAR Error Management"]) > -1
+    					itemClass: /*error*/ ctx[7][0].indexOf(/*a*/ ctx[14]["IAR Error Management"]) > -1
     					? "on apButton"
     					: "apButton"
     				},
     				{
     					item: /*error*/ ctx[7][1],
-    					itemClass: /*error*/ ctx[7][1] === /*a*/ ctx[13]["IAR Error Management"]
+    					itemClass: /*error*/ ctx[7][1] === /*a*/ ctx[14]["IAR Error Management"]
     					? "on apButton"
     					: "apButton"
     				}
@@ -22823,19 +22823,19 @@ var app = (function () {
     			if (dirty & /*airline*/ 1) card4_changes.buttons = [
     				{
     					item: /*modifications*/ ctx[8][0],
-    					itemClass: /*modifications*/ ctx[8][0] == /*a*/ ctx[13]["IAR Modifications"]
+    					itemClass: /*modifications*/ ctx[8][0] == /*a*/ ctx[14]["IAR Modifications"]
     					? "on apButton"
     					: "apButton"
     				},
     				{
     					item: /*modifications*/ ctx[8][1],
-    					itemClass: /*modifications*/ ctx[8][1] == /*a*/ ctx[13]["IAR Modifications"]
+    					itemClass: /*modifications*/ ctx[8][1] == /*a*/ ctx[14]["IAR Modifications"]
     					? "on apButton"
     					: "apButton"
     				},
     				{
     					item: /*modifications*/ ctx[8][2],
-    					itemClass: /*modifications*/ ctx[8][2] == /*a*/ ctx[13]["IAR Modifications"]
+    					itemClass: /*modifications*/ ctx[8][2] == /*a*/ ctx[14]["IAR Modifications"]
     					? "on apButton"
     					: "apButton"
     				}
@@ -22847,13 +22847,13 @@ var app = (function () {
     			if (dirty & /*airline*/ 1) card6_changes.buttons = [
     				{
     					item: "Yes",
-    					itemClass: "Yes" == /*a*/ ctx[13]["Exchange & Refund Verification"]
+    					itemClass: "Yes" == /*a*/ ctx[14]["Exchange & Refund Verification"]
     					? "ongreen apButton"
     					: "apButton"
     				},
     				{
     					item: "No",
-    					itemClass: "No" == /*a*/ ctx[13]["Exchange & Refund Verification"]
+    					itemClass: "No" == /*a*/ ctx[14]["Exchange & Refund Verification"]
     					? "onred apButton"
     					: "apButton"
     				}
@@ -22865,19 +22865,19 @@ var app = (function () {
     			if (dirty & /*airline*/ 1) card7_changes.buttons = [
     				{
     					item: "All",
-    					itemClass: "All" == /*a*/ ctx[13]["IAR Manual Entries"]
+    					itemClass: "All" == /*a*/ ctx[14]["IAR Manual Entries"]
     					? "on apButton"
     					: "apButton"
     				},
     				{
     					item: "None",
-    					itemClass: "None" == /*a*/ ctx[13]["IAR Manual Entries"]
+    					itemClass: "None" == /*a*/ ctx[14]["IAR Manual Entries"]
     					? "on apButton"
     					: "apButton"
     				},
     				{
     					item: "Void",
-    					itemClass: "Void" == /*a*/ ctx[13]["IAR Manual Entries"]
+    					itemClass: "Void" == /*a*/ ctx[14]["IAR Manual Entries"]
     					? "on apButton"
     					: "apButton"
     				}
@@ -22958,7 +22958,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(92:10) {#each airline as a}",
+    		source: "(99:10) {#each airline as a}",
     		ctx
     	});
 
@@ -22966,13 +22966,13 @@ var app = (function () {
     }
 
     function create_fragment$1(ctx) {
-    	let a;
-    	let div13;
+    	let a1;
     	let div12;
     	let div11;
     	let div10;
-    	let div7;
+    	let div9;
     	let div6;
+    	let div5;
     	let div2;
     	let div0;
     	let t0_value = /*airline*/ ctx[0][0].Designator + "";
@@ -22991,15 +22991,17 @@ var app = (function () {
     	let div3;
     	let t4;
     	let t5;
-    	let div5;
     	let div4;
+    	let a0;
     	let t6;
-    	let div9;
-    	let div8;
-    	let div8_class_value;
+    	let i;
     	let t7;
-    	let div13_class_value;
-    	let a_href_value;
+    	let div8;
+    	let div7;
+    	let div7_class_value;
+    	let t8;
+    	let div12_class_value;
+    	let a1_href_value;
     	let current;
     	let mounted;
     	let dispose;
@@ -23015,13 +23017,13 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			a = element("a");
-    			div13 = element("div");
+    			a1 = element("a");
     			div12 = element("div");
     			div11 = element("div");
     			div10 = element("div");
-    			div7 = element("div");
+    			div9 = element("div");
     			div6 = element("div");
+    			div5 = element("div");
     			div2 = element("div");
     			div0 = element("div");
     			t0 = text(t0_value);
@@ -23032,96 +23034,103 @@ var app = (function () {
     			div3 = element("div");
     			t4 = text(/*airName*/ ctx[2]);
     			t5 = space();
-    			div5 = element("div");
     			div4 = element("div");
-    			t6 = space();
-    			div9 = element("div");
-    			div8 = element("div");
-    			if_block0.c();
+    			a0 = element("a");
+    			t6 = text("Airline Profile ");
+    			i = element("i");
     			t7 = space();
+    			div8 = element("div");
+    			div7 = element("div");
+    			if_block0.c();
+    			t8 = space();
     			if (if_block1) if_block1.c();
-    			attr_dev(div0, "class", "air-designator svelte-bq1zor");
-    			add_location(div0, file$1, 59, 16, 1787);
-    			attr_dev(div1, "class", "air-code svelte-bq1zor");
-    			add_location(div1, file$1, 60, 16, 1861);
+    			attr_dev(div0, "class", "air-designator svelte-izl4qo");
+    			add_location(div0, file$1, 61, 16, 1822);
+    			attr_dev(div1, "class", "air-code svelte-izl4qo");
+    			add_location(div1, file$1, 62, 16, 1896);
     			attr_dev(div2, "class", "d-flex align-items-center");
-    			add_location(div2, file$1, 58, 14, 1731);
-    			attr_dev(div3, "class", "air-name svelte-bq1zor");
-    			add_location(div3, file$1, 68, 14, 2244);
-    			attr_dev(div4, "class", "air-updated svelte-bq1zor");
-    			set_style(div4, "margin-right", "0px");
-    			add_location(div4, file$1, 72, 16, 2392);
-    			attr_dev(div5, "class", "ml-auto d-flex align-items-center");
-    			add_location(div5, file$1, 71, 14, 2328);
-    			attr_dev(div6, "class", "d-flex flex-column flex-lg-row");
-    			add_location(div6, file$1, 57, 12, 1672);
-    			attr_dev(div7, "class", "col-11");
-    			add_location(div7, file$1, 56, 10, 1639);
+    			add_location(div2, file$1, 60, 14, 1766);
+    			attr_dev(div3, "class", "air-name svelte-izl4qo");
+    			add_location(div3, file$1, 70, 14, 2279);
+    			attr_dev(i, "class", "fas fa-chevron-right svelte-izl4qo");
+    			add_location(i, file$1, 78, 40, 2598);
+    			attr_dev(a0, "href", /*airURL*/ ctx[11]);
+    			attr_dev(a0, "target", "_blank");
+    			attr_dev(a0, "class", "apProfile d-flex align-items-center svelte-izl4qo");
+    			add_location(a0, file$1, 74, 16, 2427);
+    			attr_dev(div4, "class", "ml-auto d-flex align-items-center");
+    			add_location(div4, file$1, 73, 14, 2363);
+    			attr_dev(div5, "class", "d-flex flex-column flex-lg-row");
+    			add_location(div5, file$1, 59, 12, 1707);
+    			attr_dev(div6, "class", "col-11");
+    			add_location(div6, file$1, 58, 10, 1674);
 
-    			attr_dev(div8, "class", div8_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
+    			attr_dev(div7, "class", div7_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open apExpand"
-    			: "closed apExpand") + " svelte-bq1zor"));
+    			: "closed apExpand") + " svelte-izl4qo"));
 
-    			attr_dev(div8, "aria-expanded", /*isOpen*/ ctx[1]);
-    			add_location(div8, file$1, 78, 12, 2615);
-    			attr_dev(div9, "class", "col-1 svelte-bq1zor");
-    			add_location(div9, file$1, 76, 10, 2514);
-    			attr_dev(div10, "class", "row align-items-center");
-    			attr_dev(div10, "center", "");
-    			set_style(div10, "margin-left", "-1.125rem");
-    			set_style(div10, "margin-right", "-1.125rem");
-    			add_location(div10, file$1, 51, 8, 1489);
-    			attr_dev(div11, "class", "product-accordion-start svelte-bq1zor");
-    			add_location(div11, file$1, 50, 6, 1443);
-    			attr_dev(div12, "class", "product-accordion-top svelte-bq1zor");
-    			add_location(div12, file$1, 49, 4, 1401);
+    			attr_dev(div7, "aria-expanded", /*isOpen*/ ctx[1]);
+    			add_location(div7, file$1, 85, 12, 2822);
+    			attr_dev(div8, "class", "col-1 svelte-izl4qo");
+    			add_location(div8, file$1, 83, 10, 2721);
+    			attr_dev(div9, "class", "row align-items-center");
+    			attr_dev(div9, "center", "");
+    			set_style(div9, "margin-left", "-1.125rem");
+    			set_style(div9, "margin-right", "-1.125rem");
+    			add_location(div9, file$1, 53, 8, 1524);
+    			attr_dev(div10, "class", "product-accordion-start svelte-izl4qo");
+    			add_location(div10, file$1, 52, 6, 1478);
+    			attr_dev(div11, "class", "product-accordion-top svelte-izl4qo");
+    			add_location(div11, file$1, 51, 4, 1436);
 
-    			attr_dev(div13, "class", div13_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
+    			attr_dev(div12, "class", div12_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
-    			: "airline-accordion product-accordion-row") + " svelte-bq1zor"));
+    			: "airline-accordion product-accordion-row") + " svelte-izl4qo"));
 
-    			add_location(div13, file$1, 44, 2, 1262);
-    			attr_dev(a, "class", "accordion container svelte-bq1zor");
+    			add_location(div12, file$1, 46, 2, 1297);
+    			attr_dev(a1, "class", "accordion container svelte-izl4qo");
 
-    			attr_dev(a, "href", a_href_value = /*isOpen*/ ctx[1]
+    			attr_dev(a1, "href", a1_href_value = /*isOpen*/ ctx[1]
     			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "open?utm_source=ndc_airline"
     			: "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "closed?utm_source=ndc_airline");
 
-    			add_location(a, file$1, 33, 0, 987);
+    			add_location(a1, file$1, 35, 0, 1022);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, a, anchor);
-    			append_dev(a, div13);
-    			append_dev(div13, div12);
+    			insert_dev(target, a1, anchor);
+    			append_dev(a1, div12);
     			append_dev(div12, div11);
     			append_dev(div11, div10);
-    			append_dev(div10, div7);
-    			append_dev(div7, div6);
-    			append_dev(div6, div2);
+    			append_dev(div10, div9);
+    			append_dev(div9, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div2);
     			append_dev(div2, div0);
     			append_dev(div0, t0);
     			append_dev(div2, t1);
     			append_dev(div2, div1);
     			append_dev(div1, t2);
-    			append_dev(div6, t3);
-    			append_dev(div6, div3);
+    			append_dev(div5, t3);
+    			append_dev(div5, div3);
     			append_dev(div3, t4);
-    			append_dev(div6, t5);
-    			append_dev(div6, div5);
+    			append_dev(div5, t5);
     			append_dev(div5, div4);
-    			append_dev(div10, t6);
-    			append_dev(div10, div9);
+    			append_dev(div4, a0);
+    			append_dev(a0, t6);
+    			append_dev(a0, i);
+    			append_dev(div9, t7);
     			append_dev(div9, div8);
-    			if_block0.m(div8, null);
-    			append_dev(div11, t7);
-    			if (if_block1) if_block1.m(div11, null);
+    			append_dev(div8, div7);
+    			if_block0.m(div7, null);
+    			append_dev(div10, t8);
+    			if (if_block1) if_block1.m(div10, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(a, "click", /*toggle*/ ctx[3], false, false, false);
+    				dispose = listen_dev(a1, "click", /*toggle*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
@@ -23142,18 +23151,18 @@ var app = (function () {
 
     				if (if_block0) {
     					if_block0.c();
-    					if_block0.m(div8, null);
+    					if_block0.m(div7, null);
     				}
     			}
 
-    			if (!current || dirty & /*isOpen*/ 2 && div8_class_value !== (div8_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
+    			if (!current || dirty & /*isOpen*/ 2 && div7_class_value !== (div7_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open apExpand"
-    			: "closed apExpand") + " svelte-bq1zor"))) {
-    				attr_dev(div8, "class", div8_class_value);
+    			: "closed apExpand") + " svelte-izl4qo"))) {
+    				attr_dev(div7, "class", div7_class_value);
     			}
 
     			if (!current || dirty & /*isOpen*/ 2) {
-    				attr_dev(div8, "aria-expanded", /*isOpen*/ ctx[1]);
+    				attr_dev(div7, "aria-expanded", /*isOpen*/ ctx[1]);
     			}
 
     			if (/*isOpen*/ ctx[1]) {
@@ -23167,7 +23176,7 @@ var app = (function () {
     					if_block1 = create_if_block(ctx);
     					if_block1.c();
     					transition_in(if_block1, 1);
-    					if_block1.m(div11, null);
+    					if_block1.m(div10, null);
     				}
     			} else if (if_block1) {
     				group_outros();
@@ -23179,16 +23188,16 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (!current || dirty & /*isOpen*/ 2 && div13_class_value !== (div13_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
+    			if (!current || dirty & /*isOpen*/ 2 && div12_class_value !== (div12_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
-    			: "airline-accordion product-accordion-row") + " svelte-bq1zor"))) {
-    				attr_dev(div13, "class", div13_class_value);
+    			: "airline-accordion product-accordion-row") + " svelte-izl4qo"))) {
+    				attr_dev(div12, "class", div12_class_value);
     			}
 
-    			if (!current || dirty & /*isOpen, airline*/ 3 && a_href_value !== (a_href_value = /*isOpen*/ ctx[1]
+    			if (!current || dirty & /*isOpen, airline*/ 3 && a1_href_value !== (a1_href_value = /*isOpen*/ ctx[1]
     			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "open?utm_source=ndc_airline"
     			: "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "closed?utm_source=ndc_airline")) {
-    				attr_dev(a, "href", a_href_value);
+    				attr_dev(a1, "href", a1_href_value);
     			}
     		},
     		i: function intro(local) {
@@ -23201,7 +23210,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(a);
+    			if (detaching) detach_dev(a1);
     			if_block0.d();
     			if (if_block1) if_block1.d();
     			mounted = false;
@@ -23251,6 +23260,7 @@ var app = (function () {
     	let payments = ["Cash", "Credit"];
     	let airName = airline[0]["Airline Name"];
     	let airName2 = "";
+    	let airURL = airline[0]["URL"];
 
     	if (airName.indexOf(" via ") > -1) {
     		airName = airline[0]["Airline Name"].split(" via ")[0];
@@ -23275,7 +23285,7 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ('airline' in $$props) $$invalidate(0, airline = $$props.airline);
-    		if ('date' in $$props) $$invalidate(11, date = $$props.date);
+    		if ('date' in $$props) $$invalidate(12, date = $$props.date);
     	};
 
     	$$self.$capture_state = () => ({
@@ -23294,12 +23304,13 @@ var app = (function () {
     		arcPayment,
     		payments,
     		airName,
-    		airName2
+    		airName2,
+    		airURL
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('airline' in $$props) $$invalidate(0, airline = $$props.airline);
-    		if ('date' in $$props) $$invalidate(11, date = $$props.date);
+    		if ('date' in $$props) $$invalidate(12, date = $$props.date);
     		if ('isOpen' in $$props) $$invalidate(1, isOpen = $$props.isOpen);
     		if ('transaction' in $$props) $$invalidate(4, transaction = $$props.transaction);
     		if ('types' in $$props) $$invalidate(5, types = $$props.types);
@@ -23310,6 +23321,7 @@ var app = (function () {
     		if ('payments' in $$props) $$invalidate(10, payments = $$props.payments);
     		if ('airName' in $$props) $$invalidate(2, airName = $$props.airName);
     		if ('airName2' in $$props) airName2 = $$props.airName2;
+    		if ('airURL' in $$props) $$invalidate(11, airURL = $$props.airURL);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -23328,6 +23340,7 @@ var app = (function () {
     		modifications,
     		arcPayment,
     		payments,
+    		airURL,
     		date
     	];
     }
@@ -23335,7 +23348,7 @@ var app = (function () {
     class Airline extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { airline: 0, date: 11 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { airline: 0, date: 12 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
