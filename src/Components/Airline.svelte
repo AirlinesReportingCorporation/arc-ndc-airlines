@@ -368,12 +368,16 @@
     text-transform: uppercase;
     cursor: pointer;
     pointer-events: all;
+    position: relative;
+    position: absolute;
+    z-index: 99999999;
+    right: 15px;
   }
 
   .apProfile i {
     font-size: 11px;
     margin-left: 3px;
-}
+  }
   .accordion.container {
     cursor: pointer;
   }
