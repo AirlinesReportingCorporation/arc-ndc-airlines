@@ -367,6 +367,7 @@
     font-size: 14px;
     text-transform: uppercase;
     cursor: pointer;
+    pointer-events: all;
   }
 
   .apProfile i {
