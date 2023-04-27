@@ -441,7 +441,7 @@
   .via-tag {
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
     margin-top: 30px;
-    color: #939598;
+    color: #f77f00;
     font-size: 14px;
     position: relative;
   }
@@ -469,7 +469,7 @@
 
   .via-tag:after {
     content: "";
-    border-top: 1px solid #939598;
+    border-top: 1px solid #f77f00;
     position: absolute;
     top: 50%;
     width: 100%;
