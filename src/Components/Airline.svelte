@@ -76,7 +76,7 @@
                   href={airURL}
                   target="_blank"
                   class="apProfile d-flex align-items-center"
-                  >Airline Profile&nbsp;<i class="fas fa-chevron-right" /></a
+                  >Airline Website&nbsp;<i class="fas fa-chevron-right" /></a
                 >
               </div>
             </div>
