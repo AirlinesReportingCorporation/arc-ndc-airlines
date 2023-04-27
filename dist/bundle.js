@@ -22228,7 +22228,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "ap-open svelte-izl4qo");
+    			attr_dev(div, "class", "ap-open svelte-1rx2ig3");
     			add_location(div, file$1, 92, 16, 3059);
     		},
     		m: function mount(target, anchor) {
@@ -22257,7 +22257,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "ap-close svelte-izl4qo");
+    			attr_dev(div, "class", "ap-close svelte-1rx2ig3");
     			add_location(div, file$1, 90, 16, 2995);
     		},
     		m: function mount(target, anchor) {
@@ -22385,9 +22385,9 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "via Airline Direct";
-    			attr_dev(div0, "class", "via-tag svelte-izl4qo");
+    			attr_dev(div0, "class", "via-tag svelte-1rx2ig3");
     			add_location(div0, file$1, 107, 16, 3503);
-    			attr_dev(div1, "class", "via-container svelte-izl4qo");
+    			attr_dev(div1, "class", "via-container svelte-1rx2ig3");
     			add_location(div1, file$1, 106, 14, 3459);
     		},
     		m: function mount(target, anchor) {
@@ -22420,9 +22420,9 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			div0.textContent = "via Accelya";
-    			attr_dev(div0, "class", "via-tag accelya svelte-izl4qo");
+    			attr_dev(div0, "class", "via-tag accelya svelte-1rx2ig3");
     			add_location(div0, file$1, 103, 16, 3357);
-    			attr_dev(div1, "class", "via-container svelte-izl4qo");
+    			attr_dev(div1, "class", "via-container svelte-1rx2ig3");
     			add_location(div1, file$1, 102, 14, 3313);
     		},
     		m: function mount(target, anchor) {
@@ -23036,7 +23036,7 @@ var app = (function () {
     			t5 = space();
     			div4 = element("div");
     			a0 = element("a");
-    			t6 = text("Airline Profile ");
+    			t6 = text("Airline Website ");
     			i = element("i");
     			t7 = space();
     			div8 = element("div");
@@ -23044,19 +23044,19 @@ var app = (function () {
     			if_block0.c();
     			t8 = space();
     			if (if_block1) if_block1.c();
-    			attr_dev(div0, "class", "air-designator svelte-izl4qo");
+    			attr_dev(div0, "class", "air-designator svelte-1rx2ig3");
     			add_location(div0, file$1, 61, 16, 1822);
-    			attr_dev(div1, "class", "air-code svelte-izl4qo");
+    			attr_dev(div1, "class", "air-code svelte-1rx2ig3");
     			add_location(div1, file$1, 62, 16, 1896);
     			attr_dev(div2, "class", "d-flex align-items-center");
     			add_location(div2, file$1, 60, 14, 1766);
-    			attr_dev(div3, "class", "air-name svelte-izl4qo");
+    			attr_dev(div3, "class", "air-name svelte-1rx2ig3");
     			add_location(div3, file$1, 70, 14, 2279);
-    			attr_dev(i, "class", "fas fa-chevron-right svelte-izl4qo");
+    			attr_dev(i, "class", "fas fa-chevron-right svelte-1rx2ig3");
     			add_location(i, file$1, 78, 40, 2598);
     			attr_dev(a0, "href", /*airURL*/ ctx[11]);
     			attr_dev(a0, "target", "_blank");
-    			attr_dev(a0, "class", "apProfile d-flex align-items-center svelte-izl4qo");
+    			attr_dev(a0, "class", "apProfile d-flex align-items-center svelte-1rx2ig3");
     			add_location(a0, file$1, 74, 16, 2427);
     			attr_dev(div4, "class", "ml-auto d-flex align-items-center");
     			add_location(div4, file$1, 73, 14, 2363);
@@ -23067,28 +23067,28 @@ var app = (function () {
 
     			attr_dev(div7, "class", div7_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open apExpand"
-    			: "closed apExpand") + " svelte-izl4qo"));
+    			: "closed apExpand") + " svelte-1rx2ig3"));
 
     			attr_dev(div7, "aria-expanded", /*isOpen*/ ctx[1]);
     			add_location(div7, file$1, 85, 12, 2822);
-    			attr_dev(div8, "class", "col-1 svelte-izl4qo");
+    			attr_dev(div8, "class", "col-1 svelte-1rx2ig3");
     			add_location(div8, file$1, 83, 10, 2721);
     			attr_dev(div9, "class", "row align-items-center");
     			attr_dev(div9, "center", "");
     			set_style(div9, "margin-left", "-1.125rem");
     			set_style(div9, "margin-right", "-1.125rem");
     			add_location(div9, file$1, 53, 8, 1524);
-    			attr_dev(div10, "class", "product-accordion-start svelte-izl4qo");
+    			attr_dev(div10, "class", "product-accordion-start svelte-1rx2ig3");
     			add_location(div10, file$1, 52, 6, 1478);
-    			attr_dev(div11, "class", "product-accordion-top svelte-izl4qo");
+    			attr_dev(div11, "class", "product-accordion-top svelte-1rx2ig3");
     			add_location(div11, file$1, 51, 4, 1436);
 
     			attr_dev(div12, "class", div12_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
-    			: "airline-accordion product-accordion-row") + " svelte-izl4qo"));
+    			: "airline-accordion product-accordion-row") + " svelte-1rx2ig3"));
 
     			add_location(div12, file$1, 46, 2, 1297);
-    			attr_dev(a1, "class", "accordion container svelte-izl4qo");
+    			attr_dev(a1, "class", "accordion container svelte-1rx2ig3");
 
     			attr_dev(a1, "href", a1_href_value = /*isOpen*/ ctx[1]
     			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "open?utm_source=ndc_airline"
@@ -23157,7 +23157,7 @@ var app = (function () {
 
     			if (!current || dirty & /*isOpen*/ 2 && div7_class_value !== (div7_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open apExpand"
-    			: "closed apExpand") + " svelte-izl4qo"))) {
+    			: "closed apExpand") + " svelte-1rx2ig3"))) {
     				attr_dev(div7, "class", div7_class_value);
     			}
 
@@ -23190,7 +23190,7 @@ var app = (function () {
 
     			if (!current || dirty & /*isOpen*/ 2 && div12_class_value !== (div12_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
-    			: "airline-accordion product-accordion-row") + " svelte-izl4qo"))) {
+    			: "airline-accordion product-accordion-row") + " svelte-1rx2ig3"))) {
     				attr_dev(div12, "class", div12_class_value);
     			}
 

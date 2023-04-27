@@ -516,4 +516,10 @@
   .air-updated span {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
   }
+
+  @media screen and (max-width: 1250px) {
+    .apSectionTop .apButton {
+      font-size: 15px !important;
+    }
+  }
 </style>
