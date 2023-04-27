@@ -7,11 +7,11 @@
   export let date;
   let isOpen = false;
   const toggle = () => {
-    
-    (isOpen = !isOpen)};
+    isOpen = !isOpen;
+  };
 
   //   Transaction array
-  let transaction = airline["Airline Transaction Types"].split(", ");
+  let transaction = airline[0]["Airline Transaction Types"].split(", ");
   let types = ["Sales", "Voids", "Refunds", "Exchanges"];
   //   Sales File Type
   let sfType = ["SPRF", "RET"];
@@ -20,15 +20,15 @@
   //   IAR Modifications
   let modifications = ["All", "None", "Commission Only"];
   //   Payment via ARC array
-  let arcPayment = airline["Payment via ARC"].split(", ");
+  let arcPayment = airline[0]["Payment via ARC"].split(", ");
   let payments = ["Cash", "Credit"];
 
-  let airName = airline["Airline Name"];
-  let airName2 = "" 
+  let airName = airline[0]["Airline Name"];
+  let airName2 = "";
 
-  if(airName.indexOf(" via ") > -1){
-    airName = airline["Airline Name"].split(" via ")[0];
-    airName2 = airline["Airline Name"].split(" via ")[1];
+  if (airName.indexOf(" via ") > -1) {
+    airName = airline[0]["Airline Name"].split(" via ")[0];
+    airName2 = airline[0]["Airline Name"].split(" via ")[1];
   }
 </script>
 
@@ -36,10 +36,10 @@
   class="accordion container"
   href={isOpen
     ? "#" +
-      airline["Airline Name"].replace(" ", "") +
+      airline[0]["Airline Name"].replace(" ", "") +
       "open?utm_source=ndc_airline"
     : "#" +
-      airline["Airline Name"].replace(" ", "") +
+      airline[0]["Airline Name"].replace(" ", "") +
       "closed?utm_source=ndc_airline"}
   on:click={toggle}
 >
@@ -58,27 +58,20 @@
           <div class="col-11">
             <div class="d-flex flex-column flex-lg-row">
               <div class="d-flex align-items-center">
-                <div class="air-designator">{airline.Designator}</div>
+                <div class="air-designator">{airline[0].Designator}</div>
                 <div class="air-code">
-                  {airline["Numeric Code"].toString().length == 2
-                    ? "0" + airline["Numeric Code"]
-                    : airline["Numeric Code"].toString().length == 1
-                    ? "00" + airline["Numeric Code"]
-                    : airline["Numeric Code"]}
+                  {airline[0]["Numeric Code"].toString().length == 2
+                    ? "0" + airline[0]["Numeric Code"]
+                    : airline[0]["Numeric Code"].toString().length == 1
+                    ? "00" + airline[0]["Numeric Code"]
+                    : airline[0]["Numeric Code"]}
                 </div>
               </div>
               <div class="air-name">
                 {airName}
-
-                {#if airName2.length > 0}
-                  <div class="air-name-sub">via {airName2}</div>
-                {/if}
               </div>
               <div class="ml-auto d-flex align-items-center">
-                <div class="air-updated" style="margin-right: 0px;">
-                  <span>Latest Updates:</span>
-                  {date}
-                </div>
+                <div class="air-updated" style="margin-right: 0px;" />
               </div>
             </div>
           </div>
@@ -93,236 +86,249 @@
           </div>
         </div>
         {#if isOpen}
-          <!-- First Row -->
-          <div
-            transition:slide={{ duration: 300 }}
-            class="row no-gutters"
-            style="padding-top: 35px;"
-          >
-            <!-- SASI -->
-            <Card
-              col="3"
-              tooltip="Four-digit code identifying the airline reservation system that
-            generated the transaction. For ARC’s Direct Connect transactions,
-            this is usually the carrier code + the check digit."
-              bottomClass="apProcessing m-auto"
-              title="System Provider (SASI)"
-              buttons={[
-                {
-                  item:
-                    airline["System Provider"].toString().length < 4
-                      ? "0" + airline["System Provider"].toString()
-                      : airline["System Provider"],
-                },
-              ]}
-              bottomStyle="max-width: 80px; width: auto; margin-top: 14px !important;"
-            />
-            <!-- Sales File Type -->
-            <Card
-              col="3"
-              tooltip="SPRF is the standard ARC file format; RET is the standard IATA file format."
-              bottomClass="d-flex justify-content-center"
-              title="Sales File Type"
-              buttons={[
-                {
-                  item: sfType[0],
-                  itemClass:
-                    sfType[0] == airline["Sales File Type"]
+          {#each airline as a}
+            <!-- First Row -->
+
+            {#if a["Airline Name"].indexOf("Accelya") > -1}
+              <div class="via-container">
+                <div class="via-tag accelya">via Accelya</div>
+              </div>
+            {:else}
+              <div class="via-container">
+                <div class="via-tag">via Airline Direct</div>
+              </div>
+            {/if}
+            <div
+              transition:slide={{ duration: 300 }}
+              class="row no-gutters"
+              style="padding-top: 35px; margin-left: -20px;"
+            >
+              <!-- SASI -->
+
+              <Card
+                col="3"
+                tooltip="Four-digit code identifying the airline reservation system that
+          generated the transaction. For ARC’s Direct Connect transactions,
+          this is usually the carrier code + the check digit."
+                bottomClass="apProcessing m-auto"
+                title="System Provider (SASI)"
+                buttons={[
+                  {
+                    item:
+                      a["System Provider"].toString().length < 4
+                        ? "0" + a["System Provider"].toString()
+                        : a["System Provider"],
+                  },
+                ]}
+                bottomStyle="max-width: 80px; width: auto; margin-top: 14px !important;"
+              />
+              <!-- Sales File Type -->
+              <Card
+                col="3"
+                tooltip="SPRF is the standard ARC file format; RET is the standard IATA file format."
+                bottomClass="d-flex justify-content-center"
+                title="Sales File Type"
+                buttons={[
+                  {
+                    item: sfType[0],
+                    itemClass:
+                      sfType[0] == a["Sales File Type"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: sfType[1],
+                    itemClass:
+                      sfType[1] == a["Sales File Type"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                ]}
+                bottomStyle=""
+              />
+              <!-- IAR Error Management -->
+              <Card
+                col="6"
+                tooltip="How the airline chooses to manage transactions that trigger an IAR business edit."
+                bottomClass="d-flex justify-content-center"
+                title="IAR Error Management"
+                buttons={[
+                  {
+                    item: error[0],
+                    itemClass:
+                      error[0].indexOf(a["IAR Error Management"]) > -1
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: error[1],
+                    itemClass:
+                      error[1] === a["IAR Error Management"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                ]}
+                bottomStyle=""
+              />
+            </div>
+            <!-- Second Row -->
+            <div
+              transition:slide={{ duration: 300 }}
+              class="row no-gutters"
+              style="padding-top: 35px; margin-left: -20px;"
+            >
+              <!-- Airline Transaction Types -->
+              <Card
+                col="6"
+                tooltip="The transaction types an airline chooses to transmit to ARC’s Direct Connect Program."
+                bottomClass="d-flex justify-content-center"
+                title="Transaction Types via ARC"
+                buttons={[
+                  {
+                    item: types[0],
+                    itemClass: transaction.includes(types[0])
                       ? "on apButton"
                       : "apButton",
-                },
-                {
-                  item: sfType[1],
-                  itemClass:
-                    sfType[1] == airline["Sales File Type"]
+                  },
+                  {
+                    item: types[1],
+                    itemClass: transaction.includes(types[1])
                       ? "on apButton"
                       : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-            <!-- IAR Error Management -->
-            <Card
-              col="6"
-              tooltip="How the airline chooses to manage transactions that trigger an IAR business edit."
-              bottomClass="d-flex justify-content-center"
-              title="IAR Error Management"
-              buttons={[
-                {
-                  item: error[0],
-                  itemClass:
-                    error[0].indexOf(airline["IAR Error Management"]) > -1
+                  },
+                  {
+                    item: types[2],
+                    itemClass: transaction.includes(types[2])
                       ? "on apButton"
                       : "apButton",
-                },
-                {
-                  item: error[1],
-                  itemClass:
-                    error[1] === airline["IAR Error Management"]
+                  },
+                  {
+                    item: types[3],
+                    itemClass: transaction.includes(types[3])
                       ? "on apButton"
                       : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-          </div>
-          <!-- Second Row -->
-          <div
-            transition:slide={{ duration: 300 }}
-            class="row no-gutters"
-            style="padding-top: 35px;"
-          >
-            <!-- Airline Transaction Types -->
-            <Card
-              col="6"
-              tooltip="The transaction types an airline chooses to transmit to ARC’s Direct Connect Program."
-              bottomClass="d-flex justify-content-center"
-              title="Transaction Types via ARC"
-              buttons={[
-                {
-                  item: types[0],
-                  itemClass: transaction.includes(types[0])
-                    ? "on apButton"
-                    : "apButton",
-                },
-                {
-                  item: types[1],
-                  itemClass: transaction.includes(types[1])
-                    ? "on apButton"
-                    : "apButton",
-                },
-                {
-                  item: types[2],
-                  itemClass: transaction.includes(types[2])
-                    ? "on apButton"
-                    : "apButton",
-                },
-                {
-                  item: types[3],
-                  itemClass: transaction.includes(types[3])
-                    ? "on apButton"
-                    : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-            <Card
-              col="6"
-              tooltip="The airline’s choice of which standard IAR fields remain open for agency modification (not just those in error). The standard modification fields are Commission, Waiver Code, Tour Code, Certificate, and Ticket Designator."
-              bottomClass="d-flex justify-content-center"
-              title="IAR Modifications"
-              buttons={[
-                {
-                  item: modifications[0],
-                  itemClass:
-                    modifications[0] == airline["IAR Modifications"]
-                      ? "on apButton"
-                      : "apButton",
-                },
-                {
-                  item: modifications[1],
-                  itemClass:
-                    modifications[1] == airline["IAR Modifications"]
-                      ? "on apButton"
-                      : "apButton",
-                },
-                {
-                  item: modifications[2],
-                  itemClass:
-                    modifications[2] == airline["IAR Modifications"]
-                      ? "on apButton"
-                      : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-          </div>
-          <!-- Third  Row -->
-          <div
-            transition:slide={{ duration: 300 }}
-            class="row no-gutters"
-            style="padding-top: 35px;"
-          >
-            <!-- Payment via ARC -->
-            <Card
-              col="3"
-              tooltip="Forms of payment transmitted to ARC by the
-            carrier for reporting through ARC’s Direct
-            Connect Program."
-              bottomClass="d-flex justify-content-center"
-              title="Payment via ARC"
-              buttons={[
-                {
-                  item: payments[0],
-                  itemClass: payments.includes(arcPayment[0])
-                    ? "ongreen apButton"
-                    : "apButton",
-                },
-                {
-                  item: payments[1],
-                  itemClass: payments.includes(arcPayment[1])
-                    ? "ongreen apButton"
-                    : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-            <!-- Exch & Rfnd Verification -->
-            <Card
-              col="3"
-              tooltip="Indicates whether ARC will validate numerous data elements from the original sale."
-              bottomClass="d-flex justify-content-center"
-              title="Exch & Rfnd Verification"
-              buttons={[
-                {
-                  item: "Yes",
-                  itemClass:
-                    "Yes" == airline["Exchange & Refund Verification"]
+                  },
+                ]}
+                bottomStyle=""
+              />
+              <Card
+                col="6"
+                tooltip="The airline’s choice of which standard IAR fields remain open for agency modification (not just those in error). The standard modification fields are Commission, Waiver Code, Tour Code, Certificate, and Ticket Designator."
+                bottomClass="d-flex justify-content-center"
+                title="IAR Modifications"
+                buttons={[
+                  {
+                    item: modifications[0],
+                    itemClass:
+                      modifications[0] == a["IAR Modifications"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: modifications[1],
+                    itemClass:
+                      modifications[1] == a["IAR Modifications"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: modifications[2],
+                    itemClass:
+                      modifications[2] == a["IAR Modifications"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                ]}
+                bottomStyle=""
+              />
+            </div>
+            <!-- Third  Row -->
+            <div
+              transition:slide={{ duration: 300 }}
+              class="row no-gutters"
+              style="padding-top: 35px; margin-left: -20px;"
+            >
+              <!-- Payment via ARC -->
+              <Card
+                col="3"
+                tooltip="Forms of payment transmitted to ARC by the
+          carrier for reporting through ARC’s Direct
+          Connect Program."
+                bottomClass="d-flex justify-content-center"
+                title="Payment via ARC"
+                buttons={[
+                  {
+                    item: payments[0],
+                    itemClass: payments.includes(arcPayment[0])
                       ? "ongreen apButton"
                       : "apButton",
-                },
-                {
-                  item: "No",
-                  itemClass:
-                    "No" == airline["Exchange & Refund Verification"]
-                      ? "onred apButton"
+                  },
+                  {
+                    item: payments[1],
+                    itemClass: payments.includes(arcPayment[1])
+                      ? "ongreen apButton"
                       : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-            <!-- IAR Manual Entries -->
-            <Card
-              col="6"
-              tooltip="Which Direct Connect Program transactions the airline allows an agency to add in IAR."
-              bottomClass="d-flex justify-content-center"
-              title="IAR Manual Entries"
-              buttons={[
-                {
-                  item: "All",
-                  itemClass:
-                    "All" == airline["IAR Manual Entries"]
-                      ? "on apButton"
-                      : "apButton",
-                },
-                {
-                  item: "None",
-                  itemClass:
-                    "None" == airline["IAR Manual Entries"]
-                      ? "on apButton"
-                      : "apButton",
-                },
-                {
-                  item: "Void",
-                  itemClass:
-                    "Void" == airline["IAR Manual Entries"]
-                      ? "on apButton"
-                      : "apButton",
-                },
-              ]}
-              bottomStyle=""
-            />
-          </div>
+                  },
+                ]}
+                bottomStyle=""
+              />
+              <!-- Exch & Rfnd Verification -->
+              <Card
+                col="3"
+                tooltip="Indicates whether ARC will validate numerous data elements from the original sale."
+                bottomClass="d-flex justify-content-center"
+                title="Exch & Rfnd Verification"
+                buttons={[
+                  {
+                    item: "Yes",
+                    itemClass:
+                      "Yes" == a["Exchange & Refund Verification"]
+                        ? "ongreen apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: "No",
+                    itemClass:
+                      "No" == a["Exchange & Refund Verification"]
+                        ? "onred apButton"
+                        : "apButton",
+                  },
+                ]}
+                bottomStyle=""
+              />
+              <!-- IAR Manual Entries -->
+              <Card
+                col="6"
+                tooltip="Which Direct Connect Program transactions the airline allows an agency to add in IAR."
+                bottomClass="d-flex justify-content-center"
+                title="IAR Manual Entries"
+                buttons={[
+                  {
+                    item: "All",
+                    itemClass:
+                      "All" == a["IAR Manual Entries"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: "None",
+                    itemClass:
+                      "None" == a["IAR Manual Entries"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                  {
+                    item: "Void",
+                    itemClass:
+                      "Void" == a["IAR Manual Entries"]
+                        ? "on apButton"
+                        : "apButton",
+                  },
+                ]}
+                bottomStyle=""
+              />
+            </div>
+          {/each}
         {/if}
       </div>
     </div>
@@ -359,7 +365,7 @@
     overflow: hidden;
   }
   .airline-accordion {
-    margin: 0 0 20px;
+    margin: 0;
     border-radius: 10px;
     overflow: hidden;
   }
@@ -416,6 +422,31 @@
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #888888;
+  }
+
+  .via-container {
+    overflow: hidden;
+  }
+  .via-tag {
+    font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    color: #939598;
+    font-size: 14px;
+    position: relative;
+  }
+
+  .via-tag:after {
+    content: "";
+    border-top: 1px solid #939598;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100px;
+    left: 110px;
+  }
+
+  .via-tag.accelya:after {
+    left: 75px;
   }
 
   .air-updated {
