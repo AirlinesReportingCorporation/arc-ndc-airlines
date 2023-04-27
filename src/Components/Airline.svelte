@@ -1,7 +1,6 @@
 <script>
   import { slide } from "svelte/transition";
   import Fa from "svelte-fa";
-  import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
   import Card from "./Card.svelte";
   export let airline;
   export let date;
@@ -78,10 +77,14 @@
           <div class="col-1">
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div
-              class={isOpen ? "active open expand" : "closed expand"}
+              class={isOpen ? "active open apExpand" : "closed apExpand"}
               aria-expanded={isOpen}
             >
-              <Fa on:click={toggle} icon={isOpen ? faMinus : faPlus} />
+              {#if isOpen}
+                <div class=" ap-close" />
+              {:else}
+                <div  class=" ap-open" />
+              {/if}
             </div>
           </div>
         </div>
@@ -441,6 +444,27 @@
     color: #939598;
     font-size: 14px;
     position: relative;
+  }
+
+  .apExpand {
+    font-size: 25px;
+    cursor: pointer;
+    text-align: right;
+    margin-right: 5px;
+  }
+
+  .ap-open {
+    background: url(https://www2.arccorp.com/globalassets/airline-participation/open.png)
+      center center no-repeat;
+    width: 22px;
+    height: 14px;
+  }
+
+  .ap-close {
+    background: url(https://www2.arccorp.com/globalassets/airline-participation/close.png)
+      center center no-repeat;
+    width: 22px;
+    height: 14px;
   }
 
   .via-tag:after {
