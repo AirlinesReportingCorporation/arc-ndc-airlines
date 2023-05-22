@@ -37,10 +37,10 @@
   class="accordion container"
   href={isOpen
     ? "#" +
-      airline[0]["Airline Name"].replace(" ", "") +
+      airline[0]["Airline Name"].replace(/ /g,"_") +
       "open?utm_source=ndc_airline"
     : "#" +
-      airline[0]["Airline Name"].replace(" ", "") +
+      airline[0]["Airline Name"].replace(/ /g,"_") +
       "closed?utm_source=ndc_airline"}
   on:click={toggle}
 >
