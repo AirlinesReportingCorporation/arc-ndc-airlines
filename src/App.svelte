@@ -39,9 +39,21 @@
     for (let i = 0; i < airline.length; i++) {
       const element = airline[i];
       var current = element;
-      console.log(element);
-
-      airlineCombined.push([current]);
+      if (i < airline.length - 1) {
+        next = airline[i + 1];
+        if (current["Numeric Code"] === next["Numeric Code"]) {
+          airlineCombined.push([current, next]);
+        } else if (
+          i > 0 &&
+          airline[i - 1]["Numeric Code"] !== current["Numeric Code"]
+        ) {
+          airlineCombined.push([current]);
+        } else if (i == 0) {
+          airlineCombined.push([current]);
+        }
+      } else {
+        airlineCombined.push([current]);
+      }
     }
 
     console.log(airlineCombined);

@@ -23387,7 +23387,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (62:0) {#each airlineCombined as a}
+    // (74:0) {#each airlineCombined as a}
     function create_each_block(ctx) {
     	let airline_1;
     	let current;
@@ -23431,7 +23431,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(62:0) {#each airlineCombined as a}",
+    		source: "(74:0) {#each airlineCombined as a}",
     		ctx
     	});
 
@@ -23472,12 +23472,12 @@ var app = (function () {
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "product-callout-copy text-align-center");
     			attr_dev(div0, "style", "font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;");
-    			add_location(div0, file, 52, 4, 1420);
+    			add_location(div0, file, 64, 4, 1841);
     			attr_dev(div1, "class", "offset-lg-2 col-lg-8 ml-auto mr-auto");
     			set_style(div1, "text-align", "center");
-    			add_location(div1, file, 51, 2, 1337);
+    			add_location(div1, file, 63, 2, 1758);
     			attr_dev(div2, "class", "row align-items-center");
-    			add_location(div2, file, 50, 0, 1298);
+    			add_location(div2, file, 62, 0, 1719);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -23585,12 +23585,25 @@ var app = (function () {
 
     		console.log(airline);
     		var current = "";
+    		var next = "";
 
     		for (let i = 0; i < airline.length; i++) {
     			const element = airline[i];
     			var current = element;
-    			console.log(element);
-    			airlineCombined.push([current]);
+
+    			if (i < airline.length - 1) {
+    				next = airline[i + 1];
+
+    				if (current["Numeric Code"] === next["Numeric Code"]) {
+    					airlineCombined.push([current, next]);
+    				} else if (i > 0 && airline[i - 1]["Numeric Code"] !== current["Numeric Code"]) {
+    					airlineCombined.push([current]);
+    				} else if (i == 0) {
+    					airlineCombined.push([current]);
+    				}
+    			} else {
+    				airlineCombined.push([current]);
+    			}
     		}
 
     		console.log(airlineCombined);
