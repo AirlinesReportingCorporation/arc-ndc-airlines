@@ -22229,7 +22229,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "ap-open svelte-1rx2ig3");
-    			add_location(div, file$1, 92, 16, 3059);
+    			add_location(div, file$1, 92, 16, 3061);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22258,7 +22258,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "ap-close svelte-1rx2ig3");
-    			add_location(div, file$1, 90, 16, 2995);
+    			add_location(div, file$1, 90, 16, 2997);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -22386,9 +22386,9 @@ var app = (function () {
     			div0 = element("div");
     			div0.textContent = "via Airline Direct";
     			attr_dev(div0, "class", "via-tag svelte-1rx2ig3");
-    			add_location(div0, file$1, 107, 16, 3503);
+    			add_location(div0, file$1, 107, 16, 3505);
     			attr_dev(div1, "class", "via-container svelte-1rx2ig3");
-    			add_location(div1, file$1, 106, 14, 3459);
+    			add_location(div1, file$1, 106, 14, 3461);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -22421,9 +22421,9 @@ var app = (function () {
     			div0 = element("div");
     			div0.textContent = "via Accelya";
     			attr_dev(div0, "class", "via-tag accelya svelte-1rx2ig3");
-    			add_location(div0, file$1, 103, 16, 3357);
+    			add_location(div0, file$1, 103, 16, 3359);
     			attr_dev(div1, "class", "via-container svelte-1rx2ig3");
-    			add_location(div1, file$1, 102, 14, 3313);
+    			add_location(div1, file$1, 102, 14, 3315);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -22726,15 +22726,15 @@ var app = (function () {
     			attr_dev(div0, "class", "row no-gutters");
     			set_style(div0, "padding-top", "35px");
     			set_style(div0, "margin-left", "-20px");
-    			add_location(div0, file$1, 110, 12, 3600);
+    			add_location(div0, file$1, 110, 12, 3602);
     			attr_dev(div1, "class", "row no-gutters");
     			set_style(div1, "padding-top", "35px");
     			set_style(div1, "margin-left", "-20px");
-    			add_location(div1, file$1, 184, 12, 6389);
+    			add_location(div1, file$1, 184, 12, 6391);
     			attr_dev(div2, "class", "row no-gutters");
     			set_style(div2, "padding-top", "35px");
     			set_style(div2, "margin-left", "-20px");
-    			add_location(div2, file$1, 255, 12, 9146);
+    			add_location(div2, file$1, 255, 12, 9148);
     		},
     		m: function mount(target, anchor) {
     			if_block.m(target, anchor);
@@ -23045,54 +23045,54 @@ var app = (function () {
     			t8 = space();
     			if (if_block1) if_block1.c();
     			attr_dev(div0, "class", "air-designator svelte-1rx2ig3");
-    			add_location(div0, file$1, 61, 16, 1822);
+    			add_location(div0, file$1, 61, 16, 1824);
     			attr_dev(div1, "class", "air-code svelte-1rx2ig3");
-    			add_location(div1, file$1, 62, 16, 1896);
+    			add_location(div1, file$1, 62, 16, 1898);
     			attr_dev(div2, "class", "d-flex align-items-center");
-    			add_location(div2, file$1, 60, 14, 1766);
+    			add_location(div2, file$1, 60, 14, 1768);
     			attr_dev(div3, "class", "air-name svelte-1rx2ig3");
-    			add_location(div3, file$1, 70, 14, 2279);
+    			add_location(div3, file$1, 70, 14, 2281);
     			attr_dev(i, "class", "fas fa-chevron-right svelte-1rx2ig3");
-    			add_location(i, file$1, 78, 40, 2598);
+    			add_location(i, file$1, 78, 40, 2600);
     			attr_dev(a0, "href", /*airURL*/ ctx[11]);
     			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "class", "apProfile d-flex align-items-center svelte-1rx2ig3");
-    			add_location(a0, file$1, 74, 16, 2427);
+    			add_location(a0, file$1, 74, 16, 2429);
     			attr_dev(div4, "class", "ml-auto d-flex align-items-center");
-    			add_location(div4, file$1, 73, 14, 2363);
+    			add_location(div4, file$1, 73, 14, 2365);
     			attr_dev(div5, "class", "d-flex flex-column flex-lg-row");
-    			add_location(div5, file$1, 59, 12, 1707);
+    			add_location(div5, file$1, 59, 12, 1709);
     			attr_dev(div6, "class", "col-11");
-    			add_location(div6, file$1, 58, 10, 1674);
+    			add_location(div6, file$1, 58, 10, 1676);
 
     			attr_dev(div7, "class", div7_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active open apExpand"
     			: "closed apExpand") + " svelte-1rx2ig3"));
 
     			attr_dev(div7, "aria-expanded", /*isOpen*/ ctx[1]);
-    			add_location(div7, file$1, 85, 12, 2822);
+    			add_location(div7, file$1, 85, 12, 2824);
     			attr_dev(div8, "class", "col-1 svelte-1rx2ig3");
-    			add_location(div8, file$1, 83, 10, 2721);
+    			add_location(div8, file$1, 83, 10, 2723);
     			attr_dev(div9, "class", "row align-items-center");
     			attr_dev(div9, "center", "");
     			set_style(div9, "margin-left", "-1.125rem");
     			set_style(div9, "margin-right", "-1.125rem");
-    			add_location(div9, file$1, 53, 8, 1524);
+    			add_location(div9, file$1, 53, 8, 1526);
     			attr_dev(div10, "class", "product-accordion-start svelte-1rx2ig3");
-    			add_location(div10, file$1, 52, 6, 1478);
+    			add_location(div10, file$1, 52, 6, 1480);
     			attr_dev(div11, "class", "product-accordion-top svelte-1rx2ig3");
-    			add_location(div11, file$1, 51, 4, 1436);
+    			add_location(div11, file$1, 51, 4, 1438);
 
     			attr_dev(div12, "class", div12_class_value = "" + (null_to_empty(/*isOpen*/ ctx[1]
     			? "active airline-accordion product-accordion-row"
     			: "airline-accordion product-accordion-row") + " svelte-1rx2ig3"));
 
-    			add_location(div12, file$1, 46, 2, 1297);
+    			add_location(div12, file$1, 46, 2, 1299);
     			attr_dev(a1, "class", "accordion container svelte-1rx2ig3");
 
     			attr_dev(a1, "href", a1_href_value = /*isOpen*/ ctx[1]
-    			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "open?utm_source=ndc_airline"
-    			: "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "closed?utm_source=ndc_airline");
+    			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(/ /g, "_") + "open?utm_source=ndc_airline"
+    			: "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(/ /g, "_") + "closed?utm_source=ndc_airline");
 
     			add_location(a1, file$1, 35, 0, 1022);
     		},
@@ -23195,8 +23195,8 @@ var app = (function () {
     			}
 
     			if (!current || dirty & /*isOpen, airline*/ 3 && a1_href_value !== (a1_href_value = /*isOpen*/ ctx[1]
-    			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "open?utm_source=ndc_airline"
-    			: "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(" ", "") + "closed?utm_source=ndc_airline")) {
+    			? "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(/ /g, "_") + "open?utm_source=ndc_airline"
+    			: "#" + /*airline*/ ctx[0][0]["Airline Name"].replace(/ /g, "_") + "closed?utm_source=ndc_airline")) {
     				attr_dev(a1, "href", a1_href_value);
     			}
     		},
@@ -23387,7 +23387,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (70:0) {#each airlineCombined as a}
+    // (62:0) {#each airlineCombined as a}
     function create_each_block(ctx) {
     	let airline_1;
     	let current;
@@ -23431,7 +23431,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(70:0) {#each airlineCombined as a}",
+    		source: "(62:0) {#each airlineCombined as a}",
     		ctx
     	});
 
@@ -23472,12 +23472,12 @@ var app = (function () {
     			each_1_anchor = empty();
     			attr_dev(div0, "class", "product-callout-copy text-align-center");
     			attr_dev(div0, "style", "font-size: 18px; line-height: 24px; margin-bottom: 30px; b ncolor: #868b8c;");
-    			add_location(div0, file, 60, 4, 1742);
+    			add_location(div0, file, 52, 4, 1420);
     			attr_dev(div1, "class", "offset-lg-2 col-lg-8 ml-auto mr-auto");
     			set_style(div1, "text-align", "center");
-    			add_location(div1, file, 59, 2, 1659);
+    			add_location(div1, file, 51, 2, 1337);
     			attr_dev(div2, "class", "row align-items-center");
-    			add_location(div2, file, 58, 0, 1620);
+    			add_location(div2, file, 50, 0, 1298);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -23583,24 +23583,14 @@ var app = (function () {
     		// create objects from worksheet and update svelte state
     		airline = utils.sheet_to_json(ws).sort((a, b) => a["Airline Name"].localeCompare(b["Airline Name"]));
 
+    		console.log(airline);
     		var current = "";
-    		var next = "";
 
     		for (let i = 0; i < airline.length; i++) {
     			const element = airline[i];
     			var current = element;
-
-    			if (i < airline.length - 1) {
-    				next = airline[i + 1];
-
-    				if (current["Numeric Code"] === next["Numeric Code"]) {
-    					airlineCombined.push([current, next]);
-    				} else if (i > 0 && airline[i - 1]["Numeric Code"] !== current["Numeric Code"]) {
-    					airlineCombined.push([current]);
-    				}
-    			} else {
-    				airlineCombined.push([current]);
-    			}
+    			console.log(element);
+    			airlineCombined.push([current]);
     		}
 
     		console.log(airlineCombined);

@@ -31,25 +31,17 @@
       .sheet_to_json(ws)
       .sort((a, b) => a["Airline Name"].localeCompare(b["Airline Name"]));
 
+    console.log(airline);
+
     var current = "";
     var next = "";
 
     for (let i = 0; i < airline.length; i++) {
       const element = airline[i];
       var current = element;
-      if (i < airline.length - 1) {
-        next = airline[i + 1];
-        if (current["Numeric Code"] === next["Numeric Code"]) {
-          airlineCombined.push([current, next]);
-        } else if (
-          i > 0 &&
-          airline[i - 1]["Numeric Code"] !== current["Numeric Code"]
-        ) {
-          airlineCombined.push([current]);
-        }
-      } else {
-        airlineCombined.push([current]);
-      }
+      console.log(element);
+
+      airlineCombined.push([current]);
     }
 
     console.log(airlineCombined);
