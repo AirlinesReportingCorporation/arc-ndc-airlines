@@ -16,7 +16,7 @@
     const file = await (
       await fetch(
         "https://www2.arccorp.com/globalassets/products--participation/direct-connect/data.xlsx?" +
-          Math.floor(Math.random() * max)
+          Math.floor(Math.random() * 20)
       )
     ).arrayBuffer();
     // parse the array by reading the file
