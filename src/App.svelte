@@ -15,7 +15,8 @@
     //   fetch the xlsx sheet
     const file = await (
       await fetch(
-        "https://www2.arccorp.com/globalassets/products--participation/direct-connect/data.xlsx"
+        "https://www2.arccorp.com/globalassets/products--participation/direct-connect/data.xlsx?" +
+          Math.floor(Math.random() * max)
       )
     ).arrayBuffer();
     // parse the array by reading the file
